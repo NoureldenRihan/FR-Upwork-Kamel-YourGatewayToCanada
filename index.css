@@ -436,7 +436,7 @@ main {
   }
 
   .navItem a {
-    font-size: 5px;
+    font-size: 7px;
   }
 
   .login {
@@ -492,7 +492,7 @@ main {
 
   .langaugeIcons > .english img,
   .langaugeIcons > .french img {
-    width: 40%;
+    width: 60%;
   }
 }
 
