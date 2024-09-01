@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Gateway to Canada</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <!-- Begin Nav Bar Section -->
+    <nav>
+      <div class="navItem navText active"><a href="#">Home</a></div>
+      <div class="navItem navText"><a href="">Services</a></div>
+      <div class="navItem navText"><a href="">Contact</a></div>
+      <div class="navItem navText"><a href="">Directions</a></div>
+      <div class="navItem navText"><a href="">About us</a></div>
+      <div class="navItem langaugeIcons">
+        <div class="english" onclick="convertWebsiteLanguage('en');">
+          <img src="/media/SVGs/English.svg" alt="English Language" />
+        </div>
+        <div class="french" onclick="convertWebsiteLanguage('fr');">
+          <img src="/media/SVGs/French.svg" alt="French Language" />
+        </div>
+        <button class="login">Login</button>
+      </div>
+    </nav>
+    <!-- End Nav Bar Section -->
+
+    <!-- Begin Landing Section -->
+    <main>
+      <section class="landing">
+        <section class="banner">
+          <div class="bannerLogo">
+            <img
+              src="/media/SVGs/Landing Page Illustration.svg"
+              alt="Banner Logo"
+            />
+          </div>
+        </section>
+        <section class="services">
+          <div class="service">
+            <h1>Entry Express</h1>
+            <div class="details">
+              <div class="icon">
+                <img src="/media/SVGs/Entry.svg" alt="Entry Express" />
+              </div>
+              <h2>
+                Available in 2 options step by step guide or remote access and
+                guide with a support employer
+              </h2>
+            </div>
+          </div>
+          <div class="service">
+            <h1>Travel Kit</h1>
+            <div class="details">
+              <div class="icon">
+                <img src="/media/SVGs/Travel Kit.svg" alt="Travel Kit" />
+              </div>
+              <h2>
+                Available in 2 options a single member or a family. Contains all
+                what you need to bring ranked by importance
+              </h2>
+            </div>
+          </div>
+          <div class="service">
+            <h1>Arrival Contacts</h1>
+            <div class="details">
+              <div class="icon">
+                <img src="/media/SVGs/Contact.svg" alt="Arrival Contact" />
+              </div>
+              <h2>
+                First contact on Arrival in Canada to help you get to your Home,
+                a taxi, or hotel reservations etc...
+              </h2>
+            </div>
+          </div>
+          <div class="service">
+            <h1>Success Calculator</h1>
+            <div class="details">
+              <div class="icon">
+                <img
+                  src="/media/SVGs/Calculator.svg"
+                  alt="Success Calculator"
+                />
+              </div>
+              <h2>
+                Our Success Luck Calculator that gives an approximation to how
+                much we expect you to succeed
+              </h2>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="support">
+        <div class="title">
+          <h1 id="supportChatTitle">Support Chat</h1>
+        </div>
+        <div id="msgField" class="messageField">
+          <div class="message S-msg">
+            <h2 id="initialSupportMessage">
+              Feel Free to seek help or ask questions from our support team at
+              anytime
+            </h2>
+          </div>
+        </div>
+        <div class="messageBox">
+          <input id="usermsg" type="text" placeholder="Write a Message" />
+          <div class="icon" onclick="SendMsgToSupport();">
+            <img src="/media/SVGs/Send.svg" alt="Send Message" />
+          </div>
+        </div>
+      </section>
+      <div class="openSupport">
+        <div class="icon" onclick="openSupportChat();">
+          <img src="/media/SVGs/Send.svg" alt="Send Message" />
+        </div>
+      </div>
+      <div class="overlay" onclick="hideSupportChat();"></div>
+      <div class="overlaySupport">
+        <div class="title">
+          <h1 id="supportChatTitleOV">Support Chat</h1>
+        </div>
+        <div id="msgFieldOV" class="messageField">
+          <div class="message S-msg">
+            <h2 id="initialSupportMessageOV">
+              Feel Free to seek help or ask questions from our support team at
+              anytime
+            </h2>
+          </div>
+        </div>
+        <div class="messageBox">
+          <input id="usermsgOV" type="text" placeholder="Write a Message" />
+          <div class="icon" onclick="SendMsgToSupport(true);">
+            <img src="/media/SVGs/Send.svg" alt="Send Message" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End Landing Section -->
+    <script src="/script.js"></script>
+  </body>
+</html>
