@@ -103,6 +103,11 @@ nav {
   width: 20%;
 }
 
+.langaugeIcons > .english img,
+.langaugeIcons > .french img {
+  width: 50%;
+}
+
 .langaugeIcons > .english:hover,
 .langaugeIcons > .french:hover {
   transform: translateY(-3px);
@@ -431,7 +436,7 @@ main {
   }
 
   .navItem a {
-    font-size: 8px;
+    font-size: 6px;
   }
 
   .login {
@@ -460,7 +465,7 @@ main {
   }
 
   .details .icon {
-    width: 10%;
+    width: 25%;
   }
 
   .details h2 {
@@ -483,6 +488,11 @@ main {
 
   .openSupport {
     display: block;
+  }
+
+  .langaugeIcons > .english img,
+  .langaugeIcons > .french img {
+    width: 25%;
   }
 }
 
@@ -536,6 +546,11 @@ main {
 
   .openSupport {
     display: block;
+  }
+
+  .langaugeIcons > .english img,
+  .langaugeIcons > .french img {
+    width: 50%;
   }
 }
 
@@ -592,6 +607,11 @@ main {
 
   .openSupport {
     display: block;
+  }
+
+  .langaugeIcons > .english img,
+  .langaugeIcons > .french img {
+    width: 50%;
   }
 }
 
