@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Gateway to Canada</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="Navbar.css" />
   </head>
   <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" hidden>landing</span>
     <!-- Begin Nav Bar Section -->
     <nav>
       <div class="navItem navText active"><a href="#">Home</a></div>
@@ -50,17 +53,19 @@
               </h2>
             </div>
           </div>
-          <div class="service">
-            <h1>Travel Kit</h1>
-            <div class="details">
-              <div class="icon">
-                <img src="media/SVGs/Travel Kit.svg" alt="Travel Kit" />
+            <div class="service">
+              <a href="TravelKit.html">
+                <h1>Travel Kit</h1>
+              <div class="details">
+                <div class="icon">
+                  <img src="media/SVGs/Travel Kit.svg" alt="Travel Kit" />
+                </div>
+                <h2>
+                  Available in 2 options a single member or a family. Contains all
+                  what you need to bring ranked by importance
+                </h2>
+              </a>
               </div>
-              <h2>
-                Available in 2 options a single member or a family. Contains all
-                what you need to bring ranked by importance
-              </h2>
-            </div>
           </div>
           <div class="service">
             <h1>Arrival Contacts</h1>
@@ -77,7 +82,7 @@
           <div class="service">
             <h1>Success Calculator</h1>
             <div class="details">
-              <div class="icon">
+              <div id="Calculator" class="icon">
                 <img src="media/SVGs/Calculator.svg" alt="Success Calculator" />
               </div>
               <h2>

@@ -1,0 +1,50 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main);
+  width: 80%;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+main h1 {
+  font-weight: bold;
+  color: var(--primary);
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+ul {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 20px;
+}
+
+.travelKitItem p {
+  font-weight: normal;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.travelKitItem p span {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@media (max-width: 650px) {
+  main h1 {
+    font-size: 20px;
+  }
+
+  ul {
+    font-size: 15px;
+  }
+
+  .travelKitItem p {
+    font-size: 13px;
+  }
+}
