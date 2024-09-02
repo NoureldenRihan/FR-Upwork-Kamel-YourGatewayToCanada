@@ -41,7 +41,7 @@
 
     <!-- Start Success Calculator Section -->
     <div class="result">
-      <h1></h1>
+      <h1 id="result"></h1>
     </div>
 
     <main>
@@ -50,62 +50,68 @@
           <h1 id="formTitle" class="title">Chance of Success Calculator</h1>
           <div class="formItem">
             <label for="oralComprehension">Oral Comprehension:</label>
-            <select name="oralComprehension" id="oralComprehension" required>
-              <option value="A1" selected>A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
+            <div class="selectContainer">
+              <select name="oralComprehension" id="oralComprehension">
+                <option value="A1" selected>A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
           </div>
           <div class="formItem">
             <label for="writtenComprehension">Written Comprehension:</label>
-            <select
-              name="writtenComprehension"
-              id="writtenComprehension"
-              required
-            >
-              <option value="A1" selected>A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
+            <div class="selectContainer">
+              <select name="writtenComprehension" id="writtenComprehension">
+                <option value="A1" selected>A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
           </div>
           <div class="formItem">
             <label for="oralExpression">Oral Expression:</label>
-            <select name="oralExpression" id="oralExpression" required>
-              <option value="A1" selected>A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
+            <div class="selectContainer">
+              <select name="oralExpression" id="oralExpression">
+                <option value="A1" selected>A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
           </div>
           <div class="formItem">
             <label for="writtenExpression">Written Expression:</label>
-            <select name="writtenExpression" id="writtenExpression" required>
-              <option value="A1" selected>A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
+            <div class="selectContainer">
+              <select name="writtenExpression" id="writtenExpression">
+                <option value="A1" selected>A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
           </div>
           <div class="formItem">
             <label for="educationLevel">Education Level:</label>
-            <select name="educationLevel" id="educationLevel" required>
-              <option value="A1" selected>A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-            </select>
+            <div class="selectContainer">
+              <select name="educationLevel" id="educationLevel">
+                <option value="A1" selected>A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
           </div>
           <div class="formItem">
             <label for="professionalExperience"
@@ -113,137 +119,148 @@
               insurance):</label
             >
             <input
+              id="professionalExperience"
               class="formInput"
-              type="text"
+              type="number"
               placeholder="Number of Years"
-              required
+              min="0"
             />
           </div>
           <div class="formItem">
             <label for="age">Age:</label>
             <input
+              id="age"
               class="formInput"
               type="number"
               placeholder="Your Age"
-              required
+              min="0"
             />
           </div>
           <div class="formItem">
             <label for="sectorOfActivity">Sector of Activity:</label>
-            <select name="sectorOfActivity" id="sectorOfActivity" required>
-              <optgroup label="Health Sector">
-                <option value="Paramedic">Paramedic</option>
-                <option value="Audiologist">Audiologist</option>
-                <option value="Social and Health Services Auxiliary">
-                  Social and Health Services Auxiliary
-                </option>
-                <option value="Dentist">Dentist</option>
-                <option value="Nurse">Nurse</option>
-                <option value="Practical Nurse">Practical Nurse</option>
-                <option value="Specialist Doctor and Family Doctor">
-                  Specialist Doctor and Family Doctor
-                </option>
-                <option value="Optometrist">Optometrist</option>
-                <option value="Nursing Assistant">Nursing Assistant</option>
-                <option value="Pharmacist">Pharmacist</option>
-              </optgroup>
+            <div class="selectContainer">
+              <select name="sectorOfActivity" id="sectorOfActivity">
+                <optgroup label="Sector Of Activity">
+                  <option value="Sector of Activity" selected>
+                    Sector of Activity
+                  </option>
+                </optgroup>
+                <optgroup label="Health Sector">
+                  <option value="Paramedic">Paramedic</option>
+                  <option value="Audiologist">Audiologist</option>
+                  <option value="Social and Health Services Auxiliary">
+                    Social and Health Services Auxiliary
+                  </option>
+                  <option value="Dentist">Dentist</option>
+                  <option value="Nurse">Nurse</option>
+                  <option value="Practical Nurse">Practical Nurse</option>
+                  <option value="Specialist Doctor and Family Doctor">
+                    Specialist Doctor and Family Doctor
+                  </option>
+                  <option value="Optometrist">Optometrist</option>
+                  <option value="Nursing Assistant">Nursing Assistant</option>
+                  <option value="Pharmacist">Pharmacist</option>
+                </optgroup>
 
-              <optgroup label="Social Services and Education">
-                <option value="Early Childhood Educator">
-                  Early Childhood Educator
-                </option>
-                <option value="Childcare Worker">Childcare Worker</option>
-                <option value="Social Worker and Community Worker">
-                  Social Worker and Community Worker
-                </option>
-                <option value="Psychologist">Psychologist</option>
-              </optgroup>
+                <optgroup label="Social Services and Education">
+                  <option value="Early Childhood Educator">
+                    Early Childhood Educator
+                  </option>
+                  <option value="Childcare Worker">Childcare Worker</option>
+                  <option value="Social Worker and Community Worker">
+                    Social Worker and Community Worker
+                  </option>
+                  <option value="Psychologist">Psychologist</option>
+                </optgroup>
 
-              <optgroup label="Natural Sciences, Transportation, and Aerospace">
-                <option value="Aerospace Engineer">Aerospace Engineer</option>
-                <option value="Software Engineer">Software Engineer</option>
-                <option value="Transport Services Control Officer">
-                  Transport Services Control Officer
-                </option>
-                <option value="Statistician and Actuary">
-                  Statistician and Actuary
-                </option>
-                <option
-                  value="Mechanical Engineering Technologist and Technician"
+                <optgroup
+                  label="Natural Sciences, Transportation, and Aerospace"
                 >
-                  Mechanical Engineering Technologist and Technician
-                </option>
-                <option
-                  value="Industrial Engineering and Manufacturing Technologist and Technician"
-                >
-                  Industrial Engineering and Manufacturing Technologist and
-                  Technician
-                </option>
-              </optgroup>
+                  <option value="Aerospace Engineer">Aerospace Engineer</option>
+                  <option value="Software Engineer">Software Engineer</option>
+                  <option value="Transport Services Control Officer">
+                    Transport Services Control Officer
+                  </option>
+                  <option value="Statistician and Actuary">
+                    Statistician and Actuary
+                  </option>
+                  <option
+                    value="Mechanical Engineering Technologist and Technician"
+                  >
+                    Mechanical Engineering Technologist and Technician
+                  </option>
+                  <option
+                    value="Industrial Engineering and Manufacturing Technologist and Technician"
+                  >
+                    Industrial Engineering and Manufacturing Technologist and
+                    Technician
+                  </option>
+                </optgroup>
 
-              <optgroup label="Applied Sciences and Information Technology">
-                <option value="IT Analyst and Consultant">
-                  IT Analyst and Consultant
-                </option>
-                <option value="Database Analyst">Database Analyst</option>
-                <option value="Technical Support Analyst">
-                  Technical Support Analyst
-                </option>
-                <option value="Graphic Designer">Graphic Designer</option>
-                <option value="Illustrator">Illustrator</option>
-                <option value="IT Manager">IT Manager</option>
-                <option value="Software Engineer and Designer">
-                  Software Engineer and Designer
-                </option>
-                <option value="Web Developer">Web Developer</option>
-              </optgroup>
+                <optgroup label="Applied Sciences and Information Technology">
+                  <option value="IT Analyst and Consultant">
+                    IT Analyst and Consultant
+                  </option>
+                  <option value="Database Analyst">Database Analyst</option>
+                  <option value="Technical Support Analyst">
+                    Technical Support Analyst
+                  </option>
+                  <option value="Graphic Designer">Graphic Designer</option>
+                  <option value="Illustrator">Illustrator</option>
+                  <option value="IT Manager">IT Manager</option>
+                  <option value="Software Engineer and Designer">
+                    Software Engineer and Designer
+                  </option>
+                  <option value="Web Developer">Web Developer</option>
+                </optgroup>
 
-              <optgroup label="Sales and Marketing">
-                <option value="Marketing Analyst">Marketing Analyst</option>
-                <option value="Financial Analyst">Financial Analyst</option>
-                <option value="Sales Associate">Sales Associate</option>
-                <option value="Sales Director">Sales Director</option>
-                <option value="Account Manager">Account Manager</option>
-                <option value="Sales Representative">
-                  Sales Representative
-                </option>
-                <option value="Customer Service">Customer Service</option>
-                <option value="Digital Marketing Specialist">
-                  Digital Marketing Specialist
-                </option>
-              </optgroup>
+                <optgroup label="Sales and Marketing">
+                  <option value="Marketing Analyst">Marketing Analyst</option>
+                  <option value="Financial Analyst">Financial Analyst</option>
+                  <option value="Sales Associate">Sales Associate</option>
+                  <option value="Sales Director">Sales Director</option>
+                  <option value="Account Manager">Account Manager</option>
+                  <option value="Sales Representative">
+                    Sales Representative
+                  </option>
+                  <option value="Customer Service">Customer Service</option>
+                  <option value="Digital Marketing Specialist">
+                    Digital Marketing Specialist
+                  </option>
+                </optgroup>
 
-              <optgroup label="Other Sectors">
-                <option value="Administrative Assistant">
-                  Administrative Assistant
-                </option>
-                <option value="Cashier">Cashier</option>
-                <option value="Truck Driver">Truck Driver</option>
-                <option value="Accountant">Accountant</option>
-                <option value="Cook">Cook</option>
-                <option value="Project Manager">Project Manager</option>
-                <option value="Receptionist">Receptionist</option>
-                <option value="Waiter">Waiter</option>
-                <option value="Fruit and Vegetable Picker">
-                  Fruit and Vegetable Picker
-                </option>
-                <option value="Warehouse Worker">Warehouse Worker</option>
-                <option value="Sales Representative">
-                  Sales Representative
-                </option>
-                <option value="Truck Driver">Truck Driver</option>
-                <option value="Welder">Welder</option>
-                <option value="Web Developer">Web Developer</option>
-                <option value="Business Development Manager">
-                  Business Development Manager
-                </option>
-                <option value="Laborer">Laborer</option>
-                <option value="Mechanic">Mechanic</option>
-                <option value="Human Resources Director">
-                  Human Resources Director
-                </option>
-              </optgroup>
-            </select>
+                <optgroup label="Other Sectors">
+                  <option value="Administrative Assistant">
+                    Administrative Assistant
+                  </option>
+                  <option value="Cashier">Cashier</option>
+                  <option value="Truck Driver">Truck Driver</option>
+                  <option value="Accountant">Accountant</option>
+                  <option value="Cook">Cook</option>
+                  <option value="Project Manager">Project Manager</option>
+                  <option value="Receptionist">Receptionist</option>
+                  <option value="Waiter">Waiter</option>
+                  <option value="Fruit and Vegetable Picker">
+                    Fruit and Vegetable Picker
+                  </option>
+                  <option value="Warehouse Worker">Warehouse Worker</option>
+                  <option value="Sales Representative">
+                    Sales Representative
+                  </option>
+                  <option value="Truck Driver">Truck Driver</option>
+                  <option value="Welder">Welder</option>
+                  <option value="Web Developer">Web Developer</option>
+                  <option value="Business Development Manager">
+                    Business Development Manager
+                  </option>
+                  <option value="Laborer">Laborer</option>
+                  <option value="Mechanic">Mechanic</option>
+                  <option value="Human Resources Director">
+                    Human Resources Director
+                  </option>
+                </optgroup>
+              </select>
+            </div>
           </div>
           <button id="formBtn">Calculate</button>
         </form>

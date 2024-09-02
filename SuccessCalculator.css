@@ -8,6 +8,7 @@ main {
   margin: auto;
   border-radius: 40px;
   padding: 10px;
+  margin-bottom: 30px;
 }
 
 .result {
@@ -15,6 +16,12 @@ main {
 }
 
 .result h1 {
+  text-align: center;
+  color: green;
+}
+
+.result h1.err {
+  color: red;
 }
 
 .calculatorForm {
@@ -22,9 +29,6 @@ main {
   flex-direction: column;
   width: 100%;
   padding: 15px;
-}
-
-form {
 }
 
 form .title {
@@ -50,7 +54,22 @@ form .title {
   margin-bottom: 5px;
 }
 
+.selectContainer {
+  border-radius: 9999px;
+  padding-right: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+.formItem select,
 .formItem input {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  font-size: 13px;
 }
 
 #formBtn {
@@ -70,4 +89,22 @@ form .title {
 #formBtn:hover {
   transform: translateY(-3px);
   background-color: var(--secondaryHover);
+}
+
+@media (max-width: 850px) {
+  main {
+    width: 90%;
+  }
+
+  form .title {
+    font-size: 25px;
+  }
+
+  .formItem label {
+    font-size: 13px;
+  }
+
+  #formBtn {
+    font-size: 20px;
+  }
 }

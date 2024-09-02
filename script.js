@@ -45,7 +45,11 @@ let English = {
     NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     title: "Chance of Success Calculator",
     sectorOptions: `<select id="sectorOfActivity" name="sectorOfActivity" required>
-                
+                <optgroup label="Sector Of Activity">
+                  <option value="Sector of Activity" selected>
+                    Sector of Activity
+                  </option>
+                </optgroup>
     <optgroup label="Health Sector">
         <option value="Paramedic">Paramedic</option>
         <option value="Audiologist">Audiologist</option>
@@ -202,7 +206,11 @@ let French = {
     ],
     title: "Calculateur de Chance de Succès",
     sectorOptions: `<select id="sectorOfActivity" name="sectorOfActivity" required>
-                
+                <optgroup label="Secteur d'Activité">
+                  <option value="Secteur d'Activité" selected>
+                    Secteur d'Activité
+                  </option>
+                </optgroup>
                 <optgroup label="Secteur de la santé">
                     <option value="Ambulancier">Ambulancier - ambulancière</option>
                     <option value="Audiologiste">Audiologiste</option>
@@ -286,6 +294,8 @@ let French = {
   },
 };
 
+let currentLanguage;
+
 window.onload = () => {
   convertWebsiteLanguage("en");
 
@@ -298,8 +308,10 @@ const convertWebsiteLanguage = (language) => {
   let lang;
   if (language === "en") {
     lang = English;
+    currentLanguage = "en";
   } else if (language === "fr") {
     lang = French;
+    currentLanguage = "fr";
   }
 
   const page = document.getElementById("pageName").innerText;
@@ -396,4 +408,59 @@ const goToPage = (page) => {
 
 const successCalculator = (e) => {
   e.preventDefault();
+  window.scrollTo(0, 0);
+
+  let formAnswers = {};
+  let formError = false;
+  let enFormErrorMsg = "All Fields are required";
+  let enFormSuccessMsg = "Your Success Percentage is %";
+  let frFormErrorMsg = "Tous les champs sont obligatoires";
+  let frFormSuccessMsg = "Votre pourcentage de réussite est %";
+  let formErrorMsg;
+  let formSuccessMsg;
+
+  if (currentLanguage === "en") {
+    formErrorMsg = enFormErrorMsg;
+    formSuccessMsg = enFormSuccessMsg;
+  } else if (currentLanguage === "fr") {
+    formErrorMsg = frFormErrorMsg;
+    formSuccessMsg = frFormSuccessMsg;
+  }
+
+  let ids = [
+    "oralComprehension",
+    "writtenComprehension",
+    "oralExpression",
+    "writtenExpression",
+    "educationLevel",
+    "professionalExperience",
+    "age",
+    "sectorOfActivity",
+  ];
+
+  idValueLoop: for (let i = 0; i < ids.length; i++) {
+    const formElement = document.getElementById(ids[i]);
+    if (
+      formElement.value === "" ||
+      formElement.value === "Sector of Activity" ||
+      formElement.value === "Secteur d'Activité" ||
+      formElement.value < 0
+    ) {
+      formError = true;
+      break idValueLoop;
+    }
+
+    formAnswers[ids[i]] = formElement.value;
+  }
+
+  let h1 = document.getElementById("result");
+
+  if (formError) {
+    h1.innerText = formErrorMsg;
+    h1.classList.add("err");
+  } else {
+    h1.innerText = formSuccessMsg;
+    h1.classList.remove("err");
+    return formAnswers;
+  }
 };
