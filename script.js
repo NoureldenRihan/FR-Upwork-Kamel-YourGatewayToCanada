@@ -299,6 +299,83 @@ let English = {
       `Don't Have an Account? <a href="Register.html">Register Now</a>`,
     ],
   },
+  register: {
+    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
+    data: {
+      text: [
+        "Registration",
+        "Register Now!",
+        "Register an Account Now & Get All the Benefits!",
+        "Already Have an Account? Login Now",
+      ],
+      formSteps: {
+        step1: `<label for="Full Name">Full Name</label><input
+              id="fullname"
+              class="formInput"
+              type="text"
+              placeholder="Full Name"
+            />`,
+        step2: `<label for="Email Address">Email Address</label><input
+              id="email"
+              class="formInput"
+              type="email"
+              placeholder="Email Address"
+            />`,
+        step3: `<label for="Phone Number">Phone Number</label><input
+              id="phonenumber"
+              class="formInput"
+              type="text"
+              placeholder="Phone Number"
+            />`,
+        step4: `<label for="Gender">Gender</label><div class="selectContainer">
+              <select name="gender" id="gender">
+                <option value="Gender" selected>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Don't Specify">Don't Specify</option>
+              </select>
+            </div>`,
+        step5: `<label for="Country of Citizenship">Country of Citizenship</label><div class="selectContainer">
+              <select name="Country of Citizenship" id="Country of Citizenship">
+                <option value="Country of Citizenship" selected>Country of Citizenship</option>
+              </select>
+            </div>`,
+        step6: `<label for="Country of Residence">Country of Residence</label><div class="selectContainer">
+              <select name="Country of Residence" id="Country of Residence">
+                <option value="Country of Residence" selected>Country of Residence</option>
+              </select>
+            </div>`,
+        step7: `<label for="Marital Status">Marital Status</label><div class="selectContainer">
+              <select name="Marital Status" id="Marital Status">
+                <option value="Marital Status" selected>Marital Status</option>
+                <option value="Single" >Single</option>
+                <option value="Married" >Married</option>
+                <option value="Divorced" >Divorced</option>
+                <option value="Widowed" >Widowed</option>
+              </select>
+            </div>`,
+        step8: `<label for="Date of Birth">Date of Birth</label><input
+              id="dateofbirth"
+              class="formInput"
+              type="date"
+            />`,
+        step9: `<label for="Password">Password</label><div class="passinput">
+              <input
+                id="password"
+                class="formInput"
+                type="password"
+                placeholder="Password"
+              />
+              <img
+                src="media/SVGs/passwordEye.svg"
+                alt="Password show/hide"
+                onclick="passwordShowHide();"
+              />
+            </div>`,
+      },
+    },
+    button: "Next",
+  },
 };
 
 // Contains Website French Text
@@ -585,6 +662,90 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
       `Vous n'avez pas de compte ? <a href="Register.html">Inscrivez-vous maintenant</a>`,
     ],
   },
+  register: {
+    NavBar: [
+      "ACCUEIL",
+      "SERVICES",
+      "CONTACT",
+      "DIRECTIONS",
+      "À PROPOS",
+      "CONNEXION",
+    ],
+    data: {
+      text: [
+        "Inscription",
+        "Inscrivez-vous maintenant!",
+        "Créez un compte maintenant et bénéficiez de tous les avantages!",
+        "Vous avez déjà un compte? Connectez-vous maintenant",
+      ],
+      formSteps: {
+        step1: `<label for="Nom complet">Nom complet</label><input
+              id="fullname"
+              class="formInput"
+              type="text"
+              placeholder="Nom complet"
+            />`,
+        step2: `<label for="Adresse électronique">Adresse électronique</label><input
+              id="email"
+              class="formInput"
+              type="email"
+              placeholder="Adresse électronique"
+            />`,
+        step3: `<label for="Numéro de téléphone">Numéro de téléphone</label><input
+              id="phonenumber"
+              class="formInput"
+              type="text"
+              placeholder="Numéro de téléphone"
+            />`,
+        step4: `<label for="Genre">Genre</label><div class="selectContainer">
+              <select name="gender" id="gender">
+                <option value="Genre" selected>Genre</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                <option value="Ne pas spécifier">Ne pas spécifier</option>
+              </select>
+            </div>`,
+        step5: `<label for="Pays de citoyenneté">Pays de citoyenneté</label><div class="selectContainer">
+              <select name="Country of Citizenship" id="Country of Citizenship">
+                <option value="Pays de citoyenneté" selected>Pays de citoyenneté</option>
+              </select>
+            </div>`,
+        step6: `<label for="Pays de résidence">Pays de résidence</label><div class="selectContainer">
+              <select name="Country of Residence" id="Country of Residence">
+                <option value="Pays de résidence" selected>Pays de résidence</option>
+              </select>
+            </div>`,
+        step7: `<label for="État civil">État civil</label><div class="selectContainer">
+              <select name="Marital Status" id="Marital Status">
+                <option value="État civil" selected>État civil</option>
+                <option value="Célibataire" >Célibataire</option>
+                <option value="Marié(e)" >Marié(e)</option>
+                <option value="Divorcé(e)" >Divorcé(e)</option>
+                <option value="Veuf/Veuve" >Veuf/Veuve</option>
+              </select>
+            </div>`,
+        step8: `<label for="Date de naissance">Date de naissance</label><input
+              id="dateofbirth"
+              class="formInput"
+              type="date"
+            />`,
+        step9: `<label for="Password">Password</label><div class="passinput">
+              <input
+                id="password"
+                class="formInput"
+                type="password"
+                placeholder="Password"
+              />
+              <img
+                src="media/SVGs/passwordEye.svg"
+                alt="Password show/hide"
+                onclick="passwordShowHide();"
+              />
+            </div>`,
+      },
+    },
+    button: "Suivant",
+  },
 };
 
 let formFeedbackDict = {
@@ -612,17 +773,228 @@ let formFeedbackDict = {
       FormIneligibleMsg: "Informations de connexion incorrectes",
     },
   },
+  registerFormFeedback: {
+    en: {
+      FormErrorMsg: "All Fields are required",
+    },
+    fr: {
+      FormErrorMsg: "Tous les champs sont obligatoires",
+    },
+  },
 };
+
+const countries = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Congo, Democratic Republic of the",
+  "Costa Rica",
+  "Côte d'Ivoire",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czechia",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "North Macedonia",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
+];
 
 let currentLanguage;
 let isPasswordVisible = false;
+let registerFormStep = 1;
 
 let page = "";
 
 window.onload = () => {
   page = document.getElementById("pageName").innerText;
 
-  convertWebsiteLanguage("en");
+  convertWebsiteLanguage("en", true);
+
+  isPasswordVisible = false;
+  registerFormStep = 1;
 
   if (page === "successCalculator") {
     const successCalculatorForm = document.getElementById(
@@ -636,10 +1008,14 @@ window.onload = () => {
     const loginForm = document.getElementById("loginForm");
 
     loginForm.addEventListener("submit", (e) => loginFormHandler(e));
+  } else if (page === "register") {
+    const registerForm = document.getElementById("registerForm");
+
+    registerForm.addEventListener("submit", (e) => registerFormHandler(e));
   }
 };
 
-const convertWebsiteLanguage = (language) => {
+const convertWebsiteLanguage = (language, initialReset = false) => {
   let lang;
   if (language === "en") {
     lang = English;
@@ -746,6 +1122,15 @@ const convertWebsiteLanguage = (language) => {
     document.getElementById("title").innerText = lang.text[2];
     document.getElementById("subtitle").innerText = lang.text[3];
     document.getElementById("option").innerHTML = lang.text[4];
+  } else if (page === "register") {
+    let pageLanguage = document.getElementById("lang").innerText;
+    if (!initialReset) {
+      if ((pageLanguage === "fr") & (language === "en")) {
+        goToPage("Register");
+      } else if ((pageLanguage === "en") & (language === "fr")) {
+        goToPage("Registerfrench");
+      }
+    }
   }
 };
 
@@ -861,9 +1246,6 @@ const successCalculator = (e) => {
     );
 
     percentage += lowestLanguageScore;
-
-    console.log("DONT BROTHER");
-    console.log(percentage);
   }
 
   // Education Weighing
@@ -956,6 +1338,123 @@ const loginFormHandler = (e) => {
     formError = false;
     return;
   }
+};
 
-  console.log(formAnswers);
+let registrationFormAnswers = {};
+
+const registerFormHandler = (e) => {
+  e.preventDefault();
+
+  let h1 = document.getElementById("result");
+  h1.innerText = "";
+  h1.classList.remove("err");
+
+  let lang;
+  let formError = false;
+  let formFeedback = formFeedbackDict.registerFormFeedback;
+
+  let pageLanguage = document.getElementById("lang").innerText;
+
+  if (pageLanguage === "en") {
+    lang = English;
+    formFeedback = formFeedbackDict.loginFormFeedback.en;
+  } else if (pageLanguage === "fr") {
+    lang = French;
+    formFeedback = formFeedbackDict.loginFormFeedback.fr;
+  }
+
+  let ids = [
+    "fullname",
+    "email",
+    "phonenumber",
+    "gender",
+    "Country of Citizenship",
+    "Country of Residence",
+    "Marital Status",
+    "dateofbirth",
+    "password",
+  ];
+
+  const formElement = document.getElementById(ids[registerFormStep - 1]);
+  if (
+    formElement.value.trim() === "" ||
+    formElement.value === "Gender" ||
+    formElement.value === "Genre" ||
+    formElement.value === "Country of Citizenship" ||
+    formElement.value === "Pays de citoyenneté" ||
+    formElement.value === "Country of Residence" ||
+    formElement.value === "Pays de résidence" ||
+    formElement.value === "Marital Status" ||
+    formElement.value === "État civil"
+  ) {
+    formError = true;
+  } else {
+    registrationFormAnswers[ids[registerFormStep - 1]] = formElement.value;
+    registerFormStep += 1;
+    let percentage = parseInt(document.getElementById("percentage").innerText);
+
+    document.getElementById("currentProgress").style.width = `${
+      Math.ceil(percentage + 100 / 9) > 100
+        ? 100
+        : Math.ceil(percentage + 100 / 9)
+    }%`;
+    document.getElementById("percentage").innerText = `${
+      Math.ceil(percentage + 100 / 9) > 100
+        ? 100
+        : Math.ceil(percentage + 100 / 9)
+    }%`;
+  }
+
+  if (formError) {
+    h1.innerText = formFeedback.FormErrorMsg;
+    h1.classList.add("err");
+    formError = false;
+    return;
+  }
+
+  switch (registerFormStep) {
+    case 5:
+      document.getElementById("registerationFormItem").innerHTML =
+        lang.register.data.formSteps[`step${registerFormStep}`];
+
+      let selectElement5 = document.getElementById(ids[registerFormStep - 1]);
+
+      countries.forEach((country) => {
+        const option = document.createElement("option");
+        option.value = country;
+        option.text = country;
+        selectElement5.appendChild(option);
+      });
+      break;
+
+    case 6:
+      document.getElementById("registerationFormItem").innerHTML =
+        lang.register.data.formSteps[`step${registerFormStep}`];
+
+      let selectElement6 = document.getElementById(ids[registerFormStep - 1]);
+
+      countries.forEach((country) => {
+        const option = document.createElement("option");
+        option.value = country;
+        option.text = country;
+        selectElement6.appendChild(option);
+      });
+      break;
+
+    case 9:
+      document.getElementById("registerationFormItem").innerHTML =
+        lang.register.data.formSteps[`step${registerFormStep}`];
+
+      document.getElementById("formBtn").innerText = "Register";
+      break;
+
+    case 10:
+      // Setup Functionality of what happens after register form submit after linkage with backend
+      break;
+
+    default:
+      document.getElementById("registerationFormItem").innerHTML =
+        lang.register.data.formSteps[`step${registerFormStep}`];
+      break;
+  }
 };

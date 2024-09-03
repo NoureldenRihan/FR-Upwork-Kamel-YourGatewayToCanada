@@ -1,0 +1,268 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main);
+  width: 90%;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+  margin-bottom: 30px;
+  height: 70vh;
+}
+
+.result {
+  margin: 35px 0;
+}
+
+.result h1 {
+  text-align: center;
+  color: green;
+  font-size: 25px;
+}
+
+.result h1.err {
+  color: red;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55%;
+  padding: 15px;
+  height: 100%;
+}
+
+.progressContainer {
+  height: 50%;
+}
+
+.pageTitle {
+  color: var(--primary);
+  font-size: 50px;
+}
+
+.progress {
+  display: flex;
+}
+
+.progressBar {
+  background-color: var(--white);
+  width: 70%;
+  height: 10px;
+  border-radius: 9999px;
+  margin: 8px 15px 0 0;
+  position: relative;
+}
+
+.currentProgress {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  background-color: var(--secondary);
+  width: 0%;
+  height: 10px;
+  border-radius: 9999px;
+  margin: 8px 15px 0 0;
+}
+
+.percentage {
+  color: var(--primary);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 35px;
+}
+
+.formItem label {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.passinput {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.passinput img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  cursor: pointer;
+}
+
+.selectContainer {
+  border-radius: 9999px;
+  padding-right: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+.formItem select,
+.formItem input {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  width: 100%;
+  padding: 25px 20px;
+  border-radius: 9999px;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+#formBtn {
+  margin-top: 20px;
+  width: 100%;
+  color: var(--white);
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  background-color: var(--secondary);
+  font-size: 35px;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 15px 20px;
+}
+
+#formBtn:hover {
+  transform: translateY(-3px);
+  background-color: var(--secondaryHover);
+}
+
+.info {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info .text {
+  margin-bottom: 50px;
+}
+
+.info .text h1 {
+  color: var(--primary);
+  font-size: 50px;
+}
+
+.info .text h2 {
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+
+.info .text h2 a {
+  display: inline;
+  color: var(--secondary);
+}
+
+.info .text h2 a:hover {
+  color: var(--secondaryHover);
+  transform: translateY(-3px);
+}
+
+.icon {
+  margin-right: 15px;
+}
+
+.icon img {
+  width: 100%;
+}
+
+@media (max-width: 650px) {
+  form .title {
+    font-size: 25px;
+  }
+
+  .formItem {
+    margin-bottom: 20px;
+  }
+
+  .formItem label {
+    font-size: 17px;
+  }
+
+  #formBtn {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 10px 10px;
+  }
+
+  .result h1 {
+    font-size: 20px;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .registerForm {
+    width: 100%;
+  }
+
+  .formItem input {
+    padding: 10px 7px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 850px) {
+  form .title {
+    font-size: 25px;
+  }
+
+  .formItem {
+    margin-bottom: 20px;
+  }
+
+  .formItem label {
+    font-size: 17px;
+  }
+
+  #formBtn {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .result h1 {
+    font-size: 20px;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .registerForm {
+    width: 100%;
+  }
+
+  .formItem input {
+    padding: 15px 10px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  .formItem input {
+    padding: 20px 15px;
+    font-size: 15px;
+  }
+}
