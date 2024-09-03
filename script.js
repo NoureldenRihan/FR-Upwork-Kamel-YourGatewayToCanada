@@ -289,6 +289,16 @@ let English = {
         </ul>`,
     home: "Return Home",
   },
+  login: {
+    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
+    text: [
+      "Email Address",
+      "Password",
+      "Login Now!",
+      "Login to Access and Manage Your Account!",
+      `Don't Have an Account? <a href="Register.html">Register Now</a>`,
+    ],
+  },
 };
 
 // Contains Website French Text
@@ -558,31 +568,75 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
         </ul>`,
     home: "Retour à la Maison",
   },
+  login: {
+    NavBar: [
+      "ACCUEIL",
+      "SERVICES",
+      "CONTACT",
+      "DIRECTIONS",
+      "À PROPOS",
+      "CONNEXION",
+    ],
+    text: [
+      "Adresse E-mail",
+      "Mot de passe",
+      "Se connecter maintenant !",
+      "Connectez-vous pour accéder et gérer votre compte !",
+      `Vous n'avez pas de compte ? <a href="Register.html">Inscrivez-vous maintenant</a>`,
+    ],
+  },
 };
 
-let successCalculatorFormFeedback = {
-  en: {
-    FormErrorMsg: "All Fields are required",
-    FormIneligibleMsg:
-      "ERROR: Your application is not eligible for Express Entry.",
-    FormSuccessMsg: "Your success rate is estimated to",
+let formFeedbackDict = {
+  successCalculatorFormFeedback: {
+    en: {
+      FormErrorMsg: "All Fields are required",
+      FormIneligibleMsg:
+        "ERROR: Your application is not eligible for Express Entry.",
+      FormSuccessMsg: "Your success rate is estimated to",
+    },
+    fr: {
+      FormErrorMsg: "Tous les champs sont obligatoires",
+      FormIneligibleMsg:
+        "ERREUR: Votre dossier n'est pas admissible à Entrée Express.",
+      FormSuccessMsg: "Votre pourcentage de réussite est estimé à",
+    },
   },
-  fr: {
-    FormErrorMsg: "Tous les champs sont obligatoires",
-    FormIneligibleMsg:
-      "ERREUR: Votre dossier n'est pas admissible à Entrée Express.",
-    FormSuccessMsg: "Votre pourcentage de réussite est estimé à",
+  loginFormFeedback: {
+    en: {
+      FormErrorMsg: "All Fields are required",
+      FormIneligibleMsg: "Incorrect Login Details",
+    },
+    fr: {
+      FormErrorMsg: "Tous les champs sont obligatoires",
+      FormIneligibleMsg: "Informations de connexion incorrectes",
+    },
   },
 };
 
 let currentLanguage;
+let isPasswordVisible = false;
+
+let page = "";
 
 window.onload = () => {
+  page = document.getElementById("pageName").innerText;
+
   convertWebsiteLanguage("en");
 
-  const form = document.getElementById("form");
+  if (page === "successCalculator") {
+    const successCalculatorForm = document.getElementById(
+      "successCalculatorForm"
+    );
 
-  form.addEventListener("submit", (e) => successCalculator(e));
+    successCalculatorForm.addEventListener("submit", (e) =>
+      successCalculator(e)
+    );
+  } else if (page === "login") {
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", (e) => loginFormHandler(e));
+  }
 };
 
 const convertWebsiteLanguage = (language) => {
@@ -594,8 +648,6 @@ const convertWebsiteLanguage = (language) => {
     lang = French;
     currentLanguage = "fr";
   }
-
-  const page = document.getElementById("pageName").innerText;
 
   if (page === "landing") {
     lang = lang.landing;
@@ -676,6 +728,24 @@ const convertWebsiteLanguage = (language) => {
     document.getElementById("arrivalKitData").innerHTML = lang.data;
 
     document.getElementById("home").innerText = lang.home;
+  } else if (page === "login") {
+    lang = lang.login;
+
+    let navItems = document.querySelectorAll(".navText a");
+
+    for (let i = 0; i < navItems.length; i++) {
+      navItems[i].innerText = lang.NavBar[i].toUpperCase();
+    }
+
+    let labels = document.getElementsByTagName("label");
+
+    for (let i = 0; i < labels.length; i++) {
+      labels[i].innerText = lang.text[i];
+    }
+
+    document.getElementById("title").innerText = lang.text[2];
+    document.getElementById("subtitle").innerText = lang.text[3];
+    document.getElementById("option").innerHTML = lang.text[4];
   }
 };
 
@@ -715,7 +785,7 @@ const successCalculator = (e) => {
   let formAnswers = {};
   let formError = false;
 
-  let formFeedback = successCalculatorFormFeedback;
+  let formFeedback = formFeedbackDict.successCalculatorFormFeedback;
 
   if (currentLanguage === "en") {
     formFeedback = successCalculatorFormFeedback.en;
@@ -838,4 +908,54 @@ const successCalculator = (e) => {
 
   h1.innerText = formFeedback.FormSuccessMsg + ` ${percentage}%`;
   h1.classList.remove("err");
+};
+
+const passwordShowHide = () => {
+  let passwordInput = document.getElementById("password");
+  if (isPasswordVisible) {
+    passwordInput.type = "password";
+    isPasswordVisible = false;
+  } else {
+    passwordInput.type = "text";
+    isPasswordVisible = true;
+  }
+};
+
+const loginFormHandler = (e) => {
+  e.preventDefault();
+
+  let h1 = document.getElementById("result");
+  h1.innerText = "";
+  h1.classList.remove("err");
+
+  let formAnswers = {};
+  let formError = false;
+  let formFeedback = formFeedbackDict.loginFormFeedback;
+
+  if (currentLanguage === "en") {
+    formFeedback = formFeedbackDict.loginFormFeedback.en;
+  } else if (currentLanguage === "fr") {
+    formFeedback = formFeedbackDict.loginFormFeedback.fr;
+  }
+
+  let ids = ["email", "password"];
+
+  idValueLoop: for (let i = 0; i < ids.length; i++) {
+    const formElement = document.getElementById(ids[i]);
+    if (formElement.value.trim() === "") {
+      formError = true;
+      break idValueLoop;
+    }
+
+    formAnswers[ids[i]] = formElement.value;
+  }
+
+  if (formError) {
+    h1.innerText = formFeedback.FormErrorMsg;
+    h1.classList.add("err");
+    formError = false;
+    return;
+  }
+
+  console.log(formAnswers);
 };
