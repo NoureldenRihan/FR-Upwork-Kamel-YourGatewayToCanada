@@ -560,6 +560,21 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
   },
 };
 
+let successCalculatorFormFeedback = {
+  en: {
+    FormErrorMsg: "All Fields are required",
+    FormIneligibleMsg:
+      "ERROR: Your application is not eligible for Express Entry.",
+    FormSuccessMsg: "Your success rate is estimated to",
+  },
+  fr: {
+    FormErrorMsg: "Tous les champs sont obligatoires",
+    FormIneligibleMsg:
+      "ERREUR: Votre dossier n'est pas admissible à Entrée Express.",
+    FormSuccessMsg: "Votre pourcentage de réussite est estimé à",
+  },
+};
+
 let currentLanguage;
 
 window.onload = () => {
@@ -690,23 +705,22 @@ const goToPage = (page) => {
 
 const successCalculator = (e) => {
   e.preventDefault();
+
+  let h1 = document.getElementById("result");
+  h1.innerText = "";
+  h1.classList.remove("err");
+
   window.scrollTo(0, 0);
 
   let formAnswers = {};
   let formError = false;
-  let enFormErrorMsg = "All Fields are required";
-  let enFormSuccessMsg = "Your Success Percentage is %";
-  let frFormErrorMsg = "Tous les champs sont obligatoires";
-  let frFormSuccessMsg = "Votre pourcentage de réussite est %";
-  let formErrorMsg;
-  let formSuccessMsg;
+
+  let formFeedback = successCalculatorFormFeedback;
 
   if (currentLanguage === "en") {
-    formErrorMsg = enFormErrorMsg;
-    formSuccessMsg = enFormSuccessMsg;
+    formFeedback = successCalculatorFormFeedback.en;
   } else if (currentLanguage === "fr") {
-    formErrorMsg = frFormErrorMsg;
-    formSuccessMsg = frFormSuccessMsg;
+    formFeedback = successCalculatorFormFeedback.fr;
   }
 
   let ids = [
@@ -735,14 +749,93 @@ const successCalculator = (e) => {
     formAnswers[ids[i]] = formElement.value;
   }
 
-  let h1 = document.getElementById("result");
-
   if (formError) {
-    h1.innerText = formErrorMsg;
+    h1.innerText = formFeedback.FormErrorMsg;
     h1.classList.add("err");
-  } else {
-    h1.innerText = formSuccessMsg;
-    h1.classList.remove("err");
-    return formAnswers;
+    formError = false;
+    return;
   }
+
+  let percentage = 0;
+
+  // Language Weighing
+  if (
+    formAnswers.oralComprehension === "B1" ||
+    formAnswers.oralComprehension === "A2" ||
+    formAnswers.oralComprehension === "A1" ||
+    formAnswers.writtenComprehension === "B1" ||
+    formAnswers.writtenComprehension === "A2" ||
+    formAnswers.writtenComprehension === "A1" ||
+    formAnswers.oralExpression === "B1" ||
+    formAnswers.oralExpression === "A2" ||
+    formAnswers.oralExpression === "A1" ||
+    formAnswers.writtenExpression === "B1" ||
+    formAnswers.writtenExpression === "A2" ||
+    formAnswers.writtenExpression === "A1"
+  ) {
+    h1.innerText = formFeedback.FormIneligibleMsg;
+    h1.classList.add("err");
+    return;
+  } else {
+    const languageScores = {
+      C2: 40,
+      C1: 35,
+      B2: 30,
+    };
+
+    const lowestLanguageScore = Math.min(
+      languageScores[formAnswers.oralComprehension],
+      languageScores[formAnswers.writtenComprehension],
+      languageScores[formAnswers.oralExpression],
+      languageScores[formAnswers.writtenExpression]
+    );
+
+    percentage += lowestLanguageScore;
+
+    console.log("DONT BROTHER");
+    console.log(percentage);
+  }
+
+  // Education Weighing
+  const educationScores = {
+    "Bac+7": 30,
+    "Bac+5": 25,
+    "Bac+3": 20,
+    "Bac+2": 15,
+  };
+
+  percentage += educationScores[formAnswers.educationLevel];
+
+  // Experience weighing
+  if (formAnswers.professionalExperience > 4) {
+    percentage += 10;
+  } else if (formAnswers.professionalExperience > 2) {
+    percentage += 7;
+  } else if (formAnswers.professionalExperience > 1) {
+    percentage += 5;
+  } else {
+    percentage += 3;
+  }
+
+  // Age weighing
+  if (formAnswers.age >= 18 && formAnswers.age <= 35) {
+    percentage += 10;
+  } else if (formAnswers.age >= 31 && formAnswers.age <= 40) {
+    percentage += 7;
+  } else if (formAnswers.age >= 41 && formAnswers.age <= 50) {
+    percentage += 5;
+  } else {
+    percentage += 3;
+  }
+
+  // Sector weighing
+  percentage += 10; // Adding baseline percentage for all sectors equally
+
+  // Cap the percentage at 100%
+  if (percentage > 100) {
+    percentage = 100;
+  }
+
+  h1.innerText = formFeedback.FormSuccessMsg + ` ${percentage}%`;
+  h1.classList.remove("err");
 };
