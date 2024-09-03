@@ -40,6 +40,7 @@ let English = {
       "White background ID photos, 8 pieces each.",
       "For electronic devices: don't bring hair dryers or irons as the voltage is different. For phone and laptop chargers, you can buy plug adapters once in Canada.",
     ],
+    arrival: "Arrival Kit",
   },
   successCalculator: {
     NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
@@ -136,6 +137,158 @@ let English = {
     button: "Calculate",
     placeholders: ["Number of Years", "Your Age"],
   },
+  arrivalKit: {
+    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
+    title: "Arrival Kit",
+    data: `<ul>
+          <li class="arrivalKitItem">
+            <p>
+              <span>1/ Purchase a SIM card.</span> Chatr: $32.00/month, 50 GB of
+              data, autopay bonus, unlimited calls across Canada on 2G network.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>2/ Obtain a SIN (Social Insurance Number):</span> Visit the
+              nearest SERVICE CANADA with your passport and permanent residence
+              confirmation document. Take a ticket and wait for your turn.
+              <button class="btn"><a
+                  href="https://www.google.com/maps/search/?api=1&query=Service+Canada+Centre"
+                  >Locate the nearest Service Canada</a></button>
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>3/ Obtain a Permanent Resident card:</span> Contact IRCC and
+              follow the instructions, especially for address change if
+              necessary, so that your card is sent to your current address.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>4/ Obtain a Health Card:</span> Visit the nearest SERVICE
+              ONTARIO with your passport, permanent residence confirmation
+              document, lease contract, and the completed and signed form
+              (available on-site). Take a ticket and wait for your turn. After
+              registration, expect to receive your card by mail within 1 to 2
+              weeks.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>5/ Open a bank account:</span> We will help you choose the
+              bank that suits you. Bring identification (passport or permanent
+              resident card), the permanent residence confirmation document, the
+              lease contract, and the SIN document.
+              <button class="btn">Choose and locate a bank near you</button>
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>6/ Register for Ontario Works:</span> Create an online
+              account at
+              <a href="https://www.ontario.ca/page/ontario-works"
+                >https://www.ontario.ca/page/ontario-works</a
+              >. Follow the steps: download and fill out the forms, send the
+              requested documents, wait for the results. Once accepted, follow
+              your programs on the site or via the MY BENEFITS app (Android or
+              iOS).
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>7/ Register at the YMCA:</span>
+              <a href="https://www.ymca.ca">https://www.ymca.ca</a> - 1 - Make
+              an appointment for an assessment of your English level to study or
+              improve your English for free (part-time or full-time). 2 -
+              Request to be referred for the furniture bank. 3 - Actively search
+              for a job in collaboration with Ontario Works.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>8/ Apply for the Canada Child Benefit:</span> Download the
+              forms at
+              <a
+                href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-how-apply.html#how"
+                >https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-how-apply.html#how</a
+              >. Complete them, attach the required documents, and send
+              everything to the indicated address. Wait 8 to 11 weeks to receive
+              the funds.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>9/ After acceptance by Ontario Works:</span> Request the
+              "starter kit" containing basic household items.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>10/ Purchase the OC Transpo card:</span>
+              <a href="https://www.octranspo.com/en/fares/payment/presto-en/"
+                >https://www.octranspo.com/en/fares/payment/presto-en/</a
+              >
+              With the help of Ontario Works, you only pay 42% of the amount for
+              one month of public transportation throughout Ontario.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>11/ Visit the furniture bank:</span> To get good-condition
+              used furniture (sofa, table, chairs, wardrobe, etc.) for $200 to
+              $250, including transportation.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>12/ Register at the food bank:</span> For food assistance
+              and baby diapers if needed. Available once or twice a month
+              depending on eligibility.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span
+                >13/ Enroll in the Ontario Electricity Support Program:</span
+              >
+              <a href="https://www.ontarioelectricitysupport.ca/"
+                >https://www.ontarioelectricitysupport.ca/</a
+              >
+              Financial assistance up to $83 per electricity bill for 24 months.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>14/ Register for a family doctor:</span>
+              <a
+                href="https://www.ontario.ca/page/find-family-doctor-nurse-practitioner"
+                >https://www.ontario.ca/page/find-family-doctor-nurse-practitioner</a
+              >
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>15/ For Algerian immigrants:</span> Create an account at
+              <a href="https://capacitepc.interieur.gov.dz"
+                >https://capacitepc.interieur.gov.dz</a
+              >
+              for: 1 - Driving license capacity 2 - Consular card
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>16/ Obtain a driver's license:</span> Make an appointment on
+              <a href="Drivetest.ca">Drivetest.ca</a>. With capacity: G1 then
+              full G license within 1 month max. Without capacity: G1 in 8
+              months, then G2 in 24 months for the full G license. You should
+              also go to PAF (Francophone Welcome Point) + the nearest community
+              center.
+            </p>
+          </li>
+        </ul>`,
+    home: "Return Home",
+  },
 };
 
 // Contains Website French Text
@@ -194,6 +347,7 @@ let French = {
       "Photo d’identité fond blanc 8pcs chacun.",
       "Pour les appareil éléctronique : ne pas ramener les sèche cheuveux ni de fer a repasser le voltage n’est pas le même, pour les chargeur de telephone et de laptop vous pouvez acheter des adaptateur de prise une fois au Canada.",
     ],
+    arrival: "Kit d'Arrivée",
   },
   successCalculator: {
     NavBar: [
@@ -292,6 +446,118 @@ let French = {
     button: "Calculer",
     placeholders: ["Nombre d'Années", "Votre Âge"],
   },
+  arrivalKit: {
+    NavBar: [
+      "ACCUEIL",
+      "SERVICES",
+      "CONTACT",
+      "DIRECTIONS",
+      "À PROPOS",
+      "CONNEXION",
+    ],
+    title: "Kit d'Arrivée",
+    data: `<ul>
+          <li class="arrivalKitItem">
+            <p>
+              <span>1/ Acheter une carte SIM téléphonique.</span> Chatr : 32,00 $/mois, 50 Go de données, bonus d'autopaiement, appels illimités partout au Canada sur réseau 2G.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>2/ Obtention du NAS (numéro d'assurance sociale):</span> Se rendre au SERVICE CANADA le plus proche avec votre passeport et le document de confirmation de résidence permanente. Prenez un ticket et attendez votre tour. <button class="btn"><a
+                  href="https://www.google.com/maps/search/?api=1&query=Service+Canada+Centre"
+                  >Localiser le Service Canada le plus proche</a></button></p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>3/ Obtention de la carte de résident permanent:</span> Contactez IRCC et suivez les instructions, notamment pour le changement d'adresse si nécessaire, afin que votre carte soit envoyée à votre adresse actuelle.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>4/ Obtention de la carte Santé:</span>Rendez-vous au SERVICE ONTARIO le plus proche avec votre passeport, le document de confirmation de résidence permanente, le contrat de bail et le formulaire rempli et signé (disponible sur place). Prenez un ticket et attendez votre tour. Après l'inscription, comptez 1 à 2 semaines pour recevoir votre carte par courrier.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>5/ Ouverture d'un compte bancaire:</span>Nous vous aiderons à choisir la banque qui vous convient. Apportez une pièce d'identité (passeport ou carte de résident permanent), la confirmation de résidence permanente, le contrat de bail et le document du NAS. <button class="btn">Choisir et localiser une banque près de chez vous</button></p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>6/ Inscription à Ontario au travail:</span> Créez un compte en ligne sur
+              <a href="https://www.ontario.ca/fr/page/ontario-au-travail"
+                >https://www.ontario.ca/fr/page/ontario-au-travail</a
+              >. Suivez les étapes : téléchargez et remplissez les formulaires, envoyez les documents demandés, attendez les résultats. Une fois accepté, suivez vos programmes sur le site ou via l'application MES PRESTATIONS (Android ou iOS).
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>7/ Inscription à la YMCA:</span>
+              <a href="https://www.ymca.ca/fr">https://www.ymca.ca/fr</a> - 1 - Prenez rendez-vous pour l'évaluation de votre niveau d'anglais afin d'étudier ou d'améliorer votre anglais gratuitement (temps partiel ou plein temps). 2 - Demandez à être référencé pour la banque de meubles. 3 - Recherche active d'emploi en collaboration avec Ontario au travail.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>8/ Allocation canadienne pour enfants:</span> Téléchargez les formulaires sur
+              <a
+                href="https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/allocation-canadienne-enfants-apercu/allocation-canadienne-enfants-comment-faire-demande.html#how"
+                >https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/allocation-canadienne-enfants-apercu/allocation-canadienne-enfants-comment-faire-demande.html#how</a
+              >. Remplissez-les, joignez les documents requis, envoyez le tout à l'adresse indiquée. Attendez 8 à 11 semaines pour recevoir les fonds.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>9/ Après l'acceptation par Ontario au travail:</span> Demandez le « kit de démarrage » contenant le matériel de base pour la maison.
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>10/ Achat de la carte OC Transpo:</span>
+              <a href="https://www.octranspo.com/fr/tarifs/paiement/presto-fr/"
+                >https://www.octranspo.com/fr/tarifs/paiement/presto-fr/</a
+              >
+              Avec l'aide d'Ontario au travail, vous ne payez que 42 % du montant pour un mois de transport en commun dans tout l'Ontario.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>11/ Rendez-vous à la banque de meubles:</span> Pour obtenir des meubles d'occasion en bon état (canapé, table, chaises, armoire, etc.) pour 200 à 250 $, transport inclus.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>12/ Inscription à la banque alimentaire:</span> Pour une aide alimentaire et des couches pour bébé si nécessaire. Disponible une à deux fois par mois selon l'admissibilité.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span
+                >13/  Inscription au Programme ontarien d'aide relative aux frais d'électricité:</span
+              >
+              <a href="https://www.ontarioelectricitysupport.ca/"
+                >https://www.ontarioelectricitysupport.ca/</a
+              >
+              Aide financière jusqu'à 83 $ par facture d'électricité pendant 24 mois.</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>14/ Inscription pour un médecin de famille:</span>
+              <a
+                href="https://www.ontario.ca/fr/page/trouver-un-medecin-de-famille-ou-une-infirmiere-praticienne"
+                >https://www.ontario.ca/fr/page/trouver-un-medecin-de-famille-ou-une-infirmiere-praticienne</a
+              >
+            </p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>15/ Pour les immigrants algériens:</span> Créez un compte sur
+              <a href="https://capacitepc.interieur.gov.dz"
+                >https://capacitepc.interieur.gov.dz</a
+              >
+              pour : 1 - La capacité de permis de conduire 2 - La carte consulaire</p>
+          </li>
+          <li class="arrivalKitItem">
+            <p>
+              <span>16/ Obtention du permis de conduire:</span> Prenez rendez-vous sur
+              <a href="Drivetest.ca">Drivetest.ca</a>. Avec capacité : G1 puis permis G complet en 1 mois maximum. Sans capacité : G1 en 8 mois, puis G2 en 24 mois pour le permis G complet.
+Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communautaire les plus proches.</p>
+          </li>
+        </ul>`,
+    home: "Retour à la Maison",
+  },
 };
 
 let currentLanguage;
@@ -347,6 +613,8 @@ const convertWebsiteLanguage = (language) => {
 
     document.getElementById("travelKitTitle").innerText = lang.title;
 
+    document.getElementById("arrival").innerText = lang.arrival;
+
     let items = document.querySelectorAll(".travelKitItem");
 
     for (let i = 0; i < items.length; i++) {
@@ -379,6 +647,20 @@ const convertWebsiteLanguage = (language) => {
     for (let i = 0; i < formInputs.length; i++) {
       formInputs[i].placeholder = lang.placeholders[i];
     }
+  } else if (page === "arrivalKit") {
+    lang = lang.arrivalKit;
+
+    let navItems = document.querySelectorAll(".navText a");
+
+    for (let i = 0; i < navItems.length; i++) {
+      navItems[i].innerText = lang.NavBar[i].toUpperCase();
+    }
+
+    document.getElementById("arrivalKitTitle").innerText = lang.title;
+
+    document.getElementById("arrivalKitData").innerHTML = lang.data;
+
+    document.getElementById("home").innerText = lang.home;
   }
 };
 
