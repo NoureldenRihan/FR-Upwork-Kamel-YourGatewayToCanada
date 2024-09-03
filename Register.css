@@ -8,7 +8,7 @@ main {
   border-radius: 40px;
   padding: 10px;
   margin-bottom: 30px;
-  height: 70vh;
+  height: 80vh;
 }
 
 .result {
@@ -188,6 +188,14 @@ form {
 }
 
 @media (max-width: 650px) {
+  main {
+    height: 50vh;
+  }
+
+  .pageTitle {
+    font-size: 30px;
+  }
+
   form .title {
     font-size: 25px;
   }
@@ -218,13 +226,18 @@ form {
     width: 100%;
   }
 
-  .formItem input {
+  .formItem input,
+  .formItem select {
     padding: 10px 7px;
     font-size: 15px;
   }
 }
 
 @media (min-width: 650px) and (max-width: 850px) {
+  main {
+    height: 50vh;
+  }
+
   form .title {
     font-size: 25px;
   }
@@ -254,14 +267,16 @@ form {
     width: 100%;
   }
 
-  .formItem input {
+  .formItem input,
+  .formItem select {
     padding: 15px 10px;
     font-size: 15px;
   }
 }
 
 @media (min-width: 850px) and (max-width: 1000px) {
-  .formItem input {
+  .formItem input,
+  .formItem select {
     padding: 20px 15px;
     font-size: 15px;
   }
