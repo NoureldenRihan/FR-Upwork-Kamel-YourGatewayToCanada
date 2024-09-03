@@ -1173,9 +1173,9 @@ const successCalculator = (e) => {
   let formFeedback = formFeedbackDict.successCalculatorFormFeedback;
 
   if (currentLanguage === "en") {
-    formFeedback = successCalculatorFormFeedback.en;
+    formFeedback = formFeedbackDict.successCalculatorFormFeedback.en;
   } else if (currentLanguage === "fr") {
-    formFeedback = successCalculatorFormFeedback.fr;
+    formFeedback = formFeedbackDict.successCalculatorFormFeedback.fr;
   }
 
   let ids = [
