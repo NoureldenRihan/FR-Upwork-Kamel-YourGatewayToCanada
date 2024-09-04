@@ -180,7 +180,7 @@ let English = {
               bank that suits you. Bring identification (passport or permanent
               resident card), the permanent residence confirmation document, the
               lease contract, and the SIN document.
-              <button class="btn">Choose and locate a bank near you</button>
+              <button class="btn"><a href="Banks.html">Choose and locate a bank near you</a></button>
             </p>
           </li>
           <li class="arrivalKitItem">
@@ -376,6 +376,24 @@ let English = {
     },
     button: "Next",
   },
+  banks: {
+    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
+    title: "Ranking of the 10 Best Banks in Canada in 2024",
+    data: [
+      "RBC continues to dominate the Canadian market with diversified services and a strong reputation.",
+      "TD is known for its excellent customer service and innovative products.",
+      "Scotiabank stands out for its strong international presence and financial stability.",
+      "BMO is appreciated for its services to small businesses and its Community commitment.",
+      "CIBC offers a wide range of financial services and excellent customer support.",
+      "The National Bank is known for its personalized service, especially in Quebec.",
+      "HSBC stands out for its international banking services and expertise in global commerce.",
+      "Laurentian Bank focuses on the Quebec market with competitive products.",
+      "Desjardins has recently been affected by fraud incidents, which has affected its reputation.",
+      "CWB specializes in banking services for businesses in Western Canada.",
+    ],
+    buttons: "Locate the nearest",
+    home: "Return Home",
+  },
 };
 
 // Contains Website French Text
@@ -564,7 +582,7 @@ let French = {
           </li>
           <li class="arrivalKitItem">
             <p>
-              <span>5/ Ouverture d'un compte bancaire:</span>Nous vous aiderons à choisir la banque qui vous convient. Apportez une pièce d'identité (passeport ou carte de résident permanent), la confirmation de résidence permanente, le contrat de bail et le document du NAS. <button class="btn">Choisir et localiser une banque près de chez vous</button></p>
+              <span>5/ Ouverture d'un compte bancaire:</span>Nous vous aiderons à choisir la banque qui vous convient. Apportez une pièce d'identité (passeport ou carte de résident permanent), la confirmation de résidence permanente, le contrat de bail et le document du NAS. <button class="btn"><a href="Banks.html">Choisir et localiser une banque près de chez vous</a></button></p>
           </li>
           <li class="arrivalKitItem">
             <p>
@@ -745,6 +763,31 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
       },
     },
     button: "Suivant",
+  },
+  banks: {
+    NavBar: [
+      "ACCUEIL",
+      "SERVICES",
+      "CONTACT",
+      "DIRECTIONS",
+      "À PROPOS",
+      "CONNEXION",
+    ],
+    title: "Classement des 10 Meilleures Banques au Canada en 2024",
+    data: [
+      "RBC continue de dominer le marché canadien avec des services diversifiés et une solide réputation.",
+      "TD est reconnue pour son excellent service client et ses produits innovants.",
+      "Scotiabank se distingue par sa forte présence internationale et sa stabilité financière.",
+      "BMO est appréciée pour ses services aux petites entreprises et son engagement communautaire.",
+      "CIBC offre une vaste gamme de services financiers et un excellent support à la clientèle.",
+      "La Banque Nationale est connue pour son service personnalisé, surtout au Québec.",
+      "HSBC se distingue par ses services bancaires internationaux et son expertise en commerce mondial.",
+      "La Banque Laurentienne se concentre sur le marché québécois avec des produits compétitifs.",
+      "Desjardins a récemment été affectée par des incidents de fraude, ce qui a impacté sa réputation.",
+      "La CWB se spécialise dans les services bancaires pour les entreprises dans l'Ouest canadien.",
+    ],
+    buttons: "Localiser la plus proche",
+    home: "Retour à la Maison",
   },
 };
 
@@ -1131,6 +1174,24 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
         goToPage("Registerfrench");
       }
     }
+  } else if (page === "banks") {
+    lang = lang.banks;
+
+    let navItems = document.querySelectorAll(".navText a");
+
+    for (let i = 0; i < navItems.length; i++) {
+      navItems[i].innerText = lang.NavBar[i].toUpperCase();
+    }
+
+    document.getElementById("BanksTitle").innerText = lang.title;
+
+    let items = document.querySelectorAll(".bankDescription");
+
+    for (let i = 0; i < items.length; i++) {
+      items[i].innerText = lang.data[i];
+    }
+
+    document.getElementById("home").innerText = lang.home;
   }
 };
 

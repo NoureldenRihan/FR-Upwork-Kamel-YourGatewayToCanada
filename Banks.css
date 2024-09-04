@@ -1,0 +1,165 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main);
+  width: 60%;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#BanksTitle {
+  font-weight: bold;
+  color: var(--primary);
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+ol {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 20px;
+}
+
+.banksItem h1 {
+  text-align: left;
+}
+
+.banksItem h1 a {
+  font-weight: bold;
+  color: var(--primary);
+  text-align: left;
+  font-size: 28px;
+}
+
+.banksItem h2 {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 21px;
+}
+
+.banksItem p {
+  font-weight: lighter;
+  color: var(--white);
+  font-size: 16px;
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+
+.btn {
+  display: block;
+  color: var(--white);
+  font-weight: bold;
+  border: 0;
+  margin: 15px 0 20px 0;
+  outline: 0;
+  background-color: var(--secondary);
+  width: fit-content;
+  font-size: 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 7px 15px;
+}
+
+.btn a {
+  color: var(--white) !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: var(--secondaryHover);
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin: auto;
+}
+
+.home .btn {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 650px) {
+  main {
+    width: 95%;
+  }
+
+  #BanksTitle {
+    font-size: 20px;
+  }
+
+  ol {
+    font-size: 15px;
+  }
+
+  .banksItem h1 a {
+    font-size: 20px;
+  }
+
+  .banksItem h2 {
+    font-size: 16px;
+  }
+
+  .banksItem p {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 5px 7px;
+  }
+
+  .home {
+    width: 50%;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 1000px) {
+  main {
+    width: 80%;
+  }
+
+  #BanksTitle {
+    font-size: 24px;
+  }
+
+  ol {
+    font-size: 18px;
+  }
+
+  .banksItem h1 a {
+    font-size: 22px;
+  }
+
+  .banksItem h2 {
+    font-size: 18px;
+  }
+
+  .banksItem p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .home {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  main {
+    width: 65%;
+  }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banks - Your Gateway to Canada</title>
+    <link rel="stylesheet" href="Navbar.css" />
+    <link rel="stylesheet" href="Banks.css" />
+  </head>
+  <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" hidden>banks</span>
+    <!-- Begin Nav Bar Section -->
+    <nav>
+      <div class="navItem navText active" onclick="goToPage('index')">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="navItem navText" onclick="goToPage('index')">
+        <a href="index.html">Services</a>
+      </div>
+      <div class="navItem navText" onclick="goToPage('index')">
+        <a href="index.html">Contact</a>
+      </div>
+      <div class="navItem navText" onclick="goToPage('index')">
+        <a href="index.html">Directions</a>
+      </div>
+      <div class="navItem navText" onclick="goToPage('index')">
+        <a href="index.html">About us</a>
+      </div>
+      <div class="navItem langaugeIcons">
+        <div class="english" onclick="convertWebsiteLanguage('en');">
+          <img src="media/SVGs/English.svg" alt="English Language" />
+        </div>
+        <div class="french" onclick="convertWebsiteLanguage('fr');">
+          <img src="media/SVGs/French.svg" alt="French Language" />
+        </div>
+        <button class="login"><a href="Login.html">Login</a></button>
+      </div>
+    </nav>
+    <!-- End Nav Bar Section -->
+    <!-- Begin Banks Section -->
+
+    <main>
+      <h1 id="BanksTitle">Ranking of the 10 Best Banks in Canada in 2024</h1>
+      <section>
+        <ol>
+          <li class="banksItem">
+            <h1>
+              <a href="https://www.rbc.com/">Royal Bank of Canada (RBC)</a>
+            </h1>
+            <h2>Score: 9.5/10</h2>
+            <p class="bankDescription">
+              RBC continues to dominate the Canadian market with diversified
+              services and a strong reputation.
+            </p>
+            <button class="btn">
+              <a href="https://www.google.com/maps/search/RBC+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1>
+              <a href="https://www.td.com/">Toronto-Dominion Bank (TD)</a>
+            </h1>
+            <h2>Score: 9.3/10</h2>
+            <p class="bankDescription">
+              TD is known for its excellent customer service and innovative
+              products.
+            </p>
+            <button class="btn">
+              <a href="https://www.google.com/maps/search/TD+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1>
+              <a href="https://www.scotiabank.com/"
+                >Bank of Nova Scotia (Scotiabank)</a
+              >
+            </h1>
+            <h2>Score: 9.0/10</h2>
+            <p class="bankDescription">
+              Scotiabank stands out for its strong international presence and
+              financial stability.
+            </p>
+            <button class="btn">
+              <a
+                href="https://www.google.com/maps/search/Scotiabank+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.bmo.com/">Bank of Montreal (BMO)</a></h1>
+            <h2>Score: 8.8/10</h2>
+            <p class="bankDescription">
+              BMO is appreciated for its services to small businesses and its
+              Community commitment.
+            </p>
+            <button class="btn">
+              <a href="https://www.google.com/maps/search/BMO+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.cibc.com/">CIBC</a></h1>
+            <h2>Score: 8.7/10</h2>
+            <p class="bankDescription">
+              CIBC offers a wide range of financial services and excellent
+              customer support.
+            </p>
+            <button class="btn">
+              <a href="https://www.google.com/maps/search/CIBC+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.nbc.ca/">National Bank of Canada</a></h1>
+            <h2>Score: 8.5/10</h2>
+            <p class="bankDescription">
+              The National Bank is known for its personalized service,
+              especially in Quebec.
+            </p>
+            <button class="btn">
+              <a
+                href="https://www.google.com/maps/search/National+Bank+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.hsbc.ca/">HSBC Canada</a></h1>
+            <h2>Score: 8.2/10</h2>
+            <p class="bankDescription">
+              HSBC stands out for its international banking services and
+              expertise in global commerce.
+            </p>
+            <button class="btn">
+              <a href="https://www.google.com/maps/search/HSBC+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1>
+              <a href="https://www.laurentianbank.ca/"
+                >Laurentian Bank of Canada</a
+              >
+            </h1>
+            <h2>Score: 8.0/10</h2>
+            <p class="bankDescription">
+              Laurentian Bank focuses on the Quebec market with competitive
+              products.
+            </p>
+            <button class="btn">
+              <a
+                href="https://www.google.com/maps/search/Laurentian+Bank+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.desjardins.com/">Desjardins</a></h1>
+            <h2>Score: 7.5/10</h2>
+            <p class="bankDescription">
+              Desjardins has recently been affected by fraud incidents, which
+              has affected its reputation.
+            </p>
+            <button class="btn">
+              <a
+                href="https://www.google.com/maps/search/Desjardins+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+          <li class="banksItem">
+            <h1><a href="https://www.cwbank.com/">Canadian Western Bank</a></h1>
+            <h2>Score: 7.0/10</h2>
+            <p class="bankDescription">
+              CWB specializes in banking services for businesses in Western
+              Canada.
+            </p>
+            <button class="btn">
+              <a
+                href="https://www.google.com/maps/search/Canadian+Western+Bank+branch+near+me"
+                >Locate the nearest</a
+              >
+            </button>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <div class="home">
+      <button class="btn">
+        <a id="home" href="ArrivalKit.html">Return Home</a>
+      </button>
+    </div>
+
+    <!-- End Banks Section -->
+    <script src="script.js"></script>
+  </body>
+</html>
