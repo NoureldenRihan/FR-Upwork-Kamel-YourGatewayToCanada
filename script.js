@@ -1198,6 +1198,8 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
 const SendMsgToSupport = () => {};
 
 const openSupportChat = () => {
+  window.scrollTo(0, 0);
+
   document.getElementsByClassName("overlaySupport")[0].style.display = "flex";
   document.getElementsByClassName("openSupport")[0].style.display = "none";
 

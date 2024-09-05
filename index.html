@@ -96,23 +96,11 @@
         </section>
       </section>
       <section class="support">
-        <div class="title">
-          <h1 id="supportChatTitle">Support Chat</h1>
-        </div>
-        <div id="msgField" class="messageField">
-          <div class="message S-msg">
-            <h2 id="initialSupportMessage">
-              Feel Free to seek help or ask questions from our support team at
-              anytime
-            </h2>
-          </div>
-        </div>
-        <div class="messageBox">
-          <input id="usermsg" type="text" placeholder="Write a Message" />
-          <div class="icon" onclick="SendMsgToSupport();">
-            <img src="media/SVGs/Send.svg" alt="Send Message" />
-          </div>
-        </div>
+        <script src="https://minnit.chat/js/embed.js" defer></script>
+        <minnit-chat
+        data-chatname="https://organizations.minnit.chat/273593157541236/Main?embed&nickname=" 
+        data-style="width:99%;height:600px;max-height:90vh;"
+        ></minnit-chat>
       </section>
       <div class="openSupport">
         <div class="icon" onclick="openSupportChat();">
@@ -121,23 +109,11 @@
       </div>
       <div class="overlay" onclick="hideSupportChat();"></div>
       <div class="overlaySupport">
-        <div class="title">
-          <h1 id="supportChatTitleOV">Support Chat</h1>
-        </div>
-        <div id="msgFieldOV" class="messageField">
-          <div class="message S-msg">
-            <h2 id="initialSupportMessageOV">
-              Feel Free to seek help or ask questions from our support team at
-              anytime
-            </h2>
-          </div>
-        </div>
-        <div class="messageBox">
-          <input id="usermsgOV" type="text" placeholder="Write a Message" />
-          <div class="icon" onclick="SendMsgToSupport(true);">
-            <img src="media/SVGs/Send.svg" alt="Send Message" />
-          </div>
-        </div>
+        <script src="https://minnit.chat/js/embed.js" defer></script>
+        <minnit-chat
+        data-chatname="https://organizations.minnit.chat/273593157541236/Main?embed&nickname=" 
+        data-style="width:99%;height:600px;max-height:90vh;"
+        ></minnit-chat>
       </div>
     </main>
     <!-- End Landing Section -->
