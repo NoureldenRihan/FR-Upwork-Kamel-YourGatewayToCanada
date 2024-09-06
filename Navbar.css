@@ -29,7 +29,9 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   width: 100vw;
   overflow-x: hidden;
-  background-color: var(--bodyBackground);
+  background-image: url("media/images/background.png");
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 a {
