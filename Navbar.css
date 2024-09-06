@@ -64,12 +64,15 @@ nav {
 .navItem {
   position: relative;
   transition: 0.3s;
-  width: calc(80% / 5);
+  width: calc(83% / 7);
   text-align: center;
-  padding: 20px;
-  cursor: pointer;
   background-color: var(--main);
   height: 75px;
+}
+
+.navText {
+  cursor: pointer;
+  padding: 20px;
 }
 
 .navText:hover {
@@ -93,10 +96,11 @@ nav {
 }
 
 .langaugeIcons {
-  width: 20%;
+  width: 17%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 20px;
 }
 
 .langaugeIcons > .english,
@@ -134,6 +138,41 @@ nav {
   background-color: var(--secondaryHover);
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 9999px;
+  padding: 5px;
+  height: 50%;
+  width: 100%;
+}
+
+.searchInput {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  font-size: 15px;
+}
+
+.searchIcon {
+  width: 20%;
+}
+
+.searchIcon img {
+  width: 100%;
+  height: 100%;
+}
+
 /* End Navbar */
 
 @media (max-width: 650px) {
@@ -142,13 +181,13 @@ nav {
   }
 
   .navItem {
-    width: calc(65% / 5);
+    width: calc(80% / 7);
     padding: 10px;
     height: 35px;
   }
 
   .langaugeIcons {
-    width: 35%;
+    width: 20%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -166,22 +205,35 @@ nav {
   .langaugeIcons > .french img {
     width: 60%;
   }
+
+  .searchbar {
+    padding: 5px;
+    height: 100%;
+  }
+
+  .searchInput {
+    font-size: 7px;
+  }
+
+  .searchIcon {
+    width: 30%;
+  }
 }
 
 @media (min-width: 650px) and (max-width: 850px) {
   .navItem {
-    width: calc(65% / 5);
+    width: calc(80% / 7);
   }
 
   .langaugeIcons {
-    width: 35%;
+    width: 20%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
 
   .navItem a {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .login {
@@ -192,35 +244,58 @@ nav {
   .langaugeIcons > .french img {
     width: 50%;
   }
+
+  .searchbar {
+    padding: 5px;
+  }
+
+  .searchInput {
+    font-size: 10px;
+  }
+
+  .searchIcon {
+    width: 30%;
+  }
 }
 
-/* Medium Screens */
 @media (min-width: 850px) and (max-width: 1000px) {
   nav {
     margin-top: 4px;
   }
 
   .navItem {
-    width: calc(70% / 5);
+    width: calc(80% / 7);
   }
 
   .langaugeIcons {
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
 
   .navItem a {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .login {
-    font-size: 17px;
+    font-size: 16px;
+  }
 
-    .langaugeIcons > .english img,
-    .langaugeIcons > .french img {
-      width: 50%;
-    }
+  .langaugeIcons > .english img,
+  .langaugeIcons > .french img {
+    width: 50%;
+  }
+
+  .searchbar {
+    padding: 5px;
+  }
+
+  .searchInput {
+    font-size: 12px;
+  }
+
+  .searchIcon {
+    width: 20%;
   }
 }

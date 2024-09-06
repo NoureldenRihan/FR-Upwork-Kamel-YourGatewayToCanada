@@ -1,7 +1,18 @@
 // Contains Website English Text
 let English = {
+  navbar: {
+    data: [
+      "HOME",
+      "SERVICES",
+      "FORUM",
+      "CONTACT",
+      "PARTNERS",
+      "ABOUT US",
+      "LOGIN",
+    ],
+    search: "Quick Search",
+  },
   landing: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     services: [
       {
         title: "Entry Express",
@@ -27,7 +38,6 @@ let English = {
     ],
   },
   travelKit: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     title: "Travel Kit",
     data: [
       "Phone with a good battery + power bank etc.",
@@ -43,7 +53,6 @@ let English = {
     arrival: "Arrival Kit",
   },
   successCalculator: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     title: "Chance of Success Calculator",
     sectorOptions: `<select id="sectorOfActivity" name="sectorOfActivity" required>
                 <optgroup label="Sector Of Activity">
@@ -138,7 +147,6 @@ let English = {
     placeholders: ["Number of Years", "Your Age"],
   },
   arrivalKit: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     title: "Arrival Kit",
     data: `<ul>
           <li class="arrivalKitItem">
@@ -290,7 +298,6 @@ let English = {
     home: "Return Home",
   },
   login: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     text: [
       "Email Address",
       "Password",
@@ -300,7 +307,6 @@ let English = {
     ],
   },
   register: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     data: {
       text: [
         "Registration",
@@ -377,7 +383,6 @@ let English = {
     button: "Next",
   },
   banks: {
-    NavBar: ["HOME", "SERVICES", "CONTACT", "DIRECTIONS", "ABOUT US", "LOGIN"],
     title: "Ranking of the 10 Best Banks in Canada in 2024",
     data: [
       "RBC continues to dominate the Canadian market with diversified services and a strong reputation.",
@@ -398,15 +403,19 @@ let English = {
 
 // Contains Website French Text
 let French = {
-  landing: {
-    NavBar: [
+  navbar: {
+    data: [
       "ACCUEIL",
       "SERVICES",
+      "FORUM",
       "CONTACT",
-      "DIRECTIONS",
+      "PARTENAIRES",
       "À PROPOS",
-      "CONNEXION",
+      "LOGIN",
     ],
+    search: "Navigation Rapide",
+  },
+  landing: {
     services: [
       {
         title: "Entrée Express",
@@ -432,14 +441,6 @@ let French = {
     ],
   },
   travelKit: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     title: "Kit de Voyage",
     data: [
       "Téléphone avec une bonne batterie + power bank etc.",
@@ -455,14 +456,6 @@ let French = {
     arrival: "Kit d'Arrivée",
   },
   successCalculator: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     title: "Calculateur de Chance de Succès",
     sectorOptions: `<select id="sectorOfActivity" name="sectorOfActivity" required>
                 <optgroup label="Secteur d'Activité">
@@ -552,14 +545,6 @@ let French = {
     placeholders: ["Nombre d'Années", "Votre Âge"],
   },
   arrivalKit: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     title: "Kit d'Arrivée",
     data: `<ul>
           <li class="arrivalKitItem">
@@ -664,14 +649,6 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
     home: "Retour à la Maison",
   },
   login: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     text: [
       "Adresse E-mail",
       "Mot de passe",
@@ -681,14 +658,6 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
     ],
   },
   register: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     data: {
       text: [
         "Inscription",
@@ -765,14 +734,6 @@ Vous devez aussi aller à PAF (point d'accueil francophone) + le centre communau
     button: "Suivant",
   },
   banks: {
-    NavBar: [
-      "ACCUEIL",
-      "SERVICES",
-      "CONTACT",
-      "DIRECTIONS",
-      "À PROPOS",
-      "CONNEXION",
-    ],
     title: "Classement des 10 Meilleures Banques au Canada en 2024",
     data: [
       "RBC continue de dominer le marché canadien avec des services diversifiés et une solide réputation.",
@@ -1034,6 +995,12 @@ let page = "";
 window.onload = () => {
   page = document.getElementById("pageName").innerText;
 
+  fetch("NavbarSnippet.html")
+    .then((response) => response.text())
+    .then((htmlContent) => {
+      document.getElementById("navbar").innerHTML = htmlContent;
+    });
+
   convertWebsiteLanguage("en", true);
 
   isPasswordVisible = false;
@@ -1068,13 +1035,16 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
     currentLanguage = "fr";
   }
 
+  let navItems = document.querySelectorAll(".navText a");
+
+  for (let i = 0; i < navItems.length; i++) {
+    navItems[i].innerText = lang.navbar.data[i].toUpperCase();
+  }
+
+  document.getElementById("searchBar").placeholder = lang.navbar.search;
+
   if (page === "landing") {
     lang = lang.landing;
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
 
     let services = document.querySelectorAll(".service");
 
@@ -1091,12 +1061,6 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
   } else if (page === "travelKit") {
     lang = lang.travelKit;
 
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
-
     document.getElementById("travelKitTitle").innerText = lang.title;
 
     document.getElementById("arrival").innerText = lang.arrival;
@@ -1108,12 +1072,6 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
     }
   } else if (page === "successCalculator") {
     lang = lang.successCalculator;
-
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
 
     document.getElementById("formTitle").innerText = lang.title;
 
@@ -1136,12 +1094,6 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
   } else if (page === "arrivalKit") {
     lang = lang.arrivalKit;
 
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
-
     document.getElementById("arrivalKitTitle").innerText = lang.title;
 
     document.getElementById("arrivalKitData").innerHTML = lang.data;
@@ -1149,12 +1101,6 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
     document.getElementById("home").innerText = lang.home;
   } else if (page === "login") {
     lang = lang.login;
-
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
 
     let labels = document.getElementsByTagName("label");
 
@@ -1176,12 +1122,6 @@ const convertWebsiteLanguage = (language, initialReset = false) => {
     }
   } else if (page === "banks") {
     lang = lang.banks;
-
-    let navItems = document.querySelectorAll(".navText a");
-
-    for (let i = 0; i < navItems.length; i++) {
-      navItems[i].innerText = lang.NavBar[i].toUpperCase();
-    }
 
     document.getElementById("BanksTitle").innerText = lang.title;
 
