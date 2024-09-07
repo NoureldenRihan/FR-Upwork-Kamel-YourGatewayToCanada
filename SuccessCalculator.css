@@ -92,6 +92,26 @@ form .title {
   background-color: var(--secondaryHover);
 }
 
+.guideBtn {
+  border: 0;
+  outline: 0;
+  background-color: var(--secondary);
+  font-size: 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 2px 10px;
+  margin-bottom: 3px;
+}
+
+.guideBtn a {
+  color: var(--white);
+}
+
+.guideBtn:hover {
+  transform: translateY(-3px);
+  background-color: var(--secondaryHover);
+}
+
 @media (max-width: 850px) {
   main {
     width: 90%;
@@ -111,5 +131,11 @@ form .title {
 
   .result h1 {
     font-size: 20px;
+  }
+
+  .guideBtn {
+    font-size: 10px;
+    padding: 2px 7px;
+    margin-bottom: 3px;
   }
 }
