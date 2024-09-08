@@ -992,10 +992,10 @@ let registerFormStep = 1;
 
 let page = "";
 
-window.onload = () => {
+window.onload = async () => {
   page = document.getElementById("pageName").innerText;
 
-  fetch("NavbarSnippet.html")
+  await fetch("NavbarSnippet.html")
     .then((response) => response.text())
     .then((htmlContent) => {
       document.getElementById("navbar").innerHTML = htmlContent;

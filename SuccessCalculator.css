@@ -19,6 +19,11 @@ main {
   text-align: center;
   color: green;
   font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: fit-content;
+  margin: auto;
+  border-radius: 9999px;
+  padding: 10px 15px;
 }
 
 .result h1.err {
