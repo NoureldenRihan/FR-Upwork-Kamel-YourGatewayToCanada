@@ -14,7 +14,18 @@
       type="text"
       class="searchInput"
       placeholder="Quick Search"
+      list="searchOptions"
     />
+    <datalist id="searchOptions">
+      <option value="Arrival Kit"></option>
+      <option value="Banks"></option>
+      <option value="Home"></option>
+      <option value="Register"></option>
+      <option value="Login"></option>
+      <option value="Travel Kit"></option>
+      <option value="Success Calculator"></option>
+    </datalist>
+
     <div class="searchIcon">
       <img src="media/SVGs/Search.svg" alt="Search Icon" />
     </div>
@@ -30,10 +41,10 @@
   <a href="index.html">About us</a>
 </div>
 <div class="navItem langaugeIcons">
-  <div class="english" onclick="convertWebsiteLanguage('en');">
+  <div class="english" onclick="convertWebsiteLanguage('English');">
     <img src="media/SVGs/English.svg" alt="English Language" />
   </div>
-  <div class="french" onclick="convertWebsiteLanguage('fr');">
+  <div class="french" onclick="convertWebsiteLanguage('French');">
     <img src="media/SVGs/French.svg" alt="French Language" />
   </div>
   <button class="login"><a href="Login.html">Login</a></button>
