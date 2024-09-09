@@ -1,35 +1,82 @@
+let RegisterFormSteps = {
+  step1: `<label for="Full Name">Full Name</label><input
+        id="fullname"
+        class="formInput"
+        type="text"
+        placeholder="Full Name"
+      />`,
+  step2: `<label for="Email Address">Email Address</label><input
+        id="email"
+        class="formInput"
+        type="email"
+        placeholder="Email Address"
+      />`,
+  step3: `<label for="Phone Number">Phone Number</label><input
+        id="phonenumber"
+        class="formInput"
+        type="text"
+        placeholder="Phone Number"
+      />`,
+  step4: `<label for="Gender">Gender</label><div class="selectContainer">
+        <select name="gender" id="gender">
+          <option value="Gender" selected>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Don't Specify">Don't Specify</option>
+        </select>
+      </div>`,
+  step5: `<label for="Country of Citizenship">Country of Citizenship</label><div class="selectContainer">
+        <select name="Country of Citizenship" id="Country of Citizenship">
+          <option value="Country of Citizenship" selected>Country of Citizenship</option>
+        </select>
+      </div>`,
+  step6: `<label for="Country of Residence">Country of Residence</label><div class="selectContainer">
+        <select name="Country of Residence" id="Country of Residence">
+          <option value="Country of Residence" selected>Country of Residence</option>
+        </select>
+      </div>`,
+  step7: `<label for="Marital Status">Marital Status</label><div class="selectContainer">
+        <select name="Marital Status" id="Marital Status">
+          <option value="Marital Status" selected>Marital Status</option>
+          <option value="Single" >Single</option>
+          <option value="Married" >Married</option>
+          <option value="Divorced" >Divorced</option>
+          <option value="Widowed" >Widowed</option>
+        </select>
+      </div>`,
+  step8: `<label for="Date of Birth">Date of Birth</label><input
+        id="dateofbirth"
+        class="formInput"
+        type="date"
+      />`,
+  step9: `<label for="Password">Password</label><div class="passinput">
+        <input
+          id="password"
+          class="formInput"
+          type="password"
+          placeholder="Password"
+        />
+        <img
+          src="media/SVGs/passwordEye.svg"
+          alt="Password show/hide"
+          onclick="passwordShowHide();"
+        />
+      </div>`,
+};
+
 let formFeedbackDict = {
   successCalculatorFormFeedback: {
-    en: {
-      FormErrorMsg: "All Fields are required",
-      FormIneligibleMsg:
-        "ERROR: Your application is not eligible for Express Entry.",
-      FormSuccessMsg: "Your success rate is estimated to",
-    },
-    fr: {
-      FormErrorMsg: "Tous les champs sont obligatoires",
-      FormIneligibleMsg:
-        "ERREUR: Votre dossier n'est pas admissible à Entrée Express.",
-      FormSuccessMsg: "Votre pourcentage de réussite est estimé à",
-    },
+    FormErrorMsg: "All Fields are required",
+    FormIneligibleMsg:
+      "ERROR: Your application is not eligible for Express Entry.",
+    FormSuccessMsg: "Your success rate is estimated to",
   },
   loginFormFeedback: {
-    en: {
-      FormErrorMsg: "All Fields are required",
-      FormIneligibleMsg: "Incorrect Login Details",
-    },
-    fr: {
-      FormErrorMsg: "Tous les champs sont obligatoires",
-      FormIneligibleMsg: "Informations de connexion incorrectes",
-    },
+    FormErrorMsg: "All Fields are required",
+    FormIneligibleMsg: "Incorrect Login Details",
   },
   registerFormFeedback: {
-    en: {
-      FormErrorMsg: "All Fields are required",
-    },
-    fr: {
-      FormErrorMsg: "Tous les champs sont obligatoires",
-    },
+    FormErrorMsg: "All Fields are required",
   },
 };
 
@@ -232,7 +279,7 @@ const countries = [
   "Zimbabwe",
 ];
 
-let currentLanguage;
+let currentLanguage = "English";
 let isPasswordVisible = false;
 let registerFormStep = 1;
 let registrationFormAnswers = {};
@@ -282,9 +329,17 @@ const convertWebsiteLanguage = (language) => {
       const elementText = iframeContents[i].textContent;
       if (language === elementText.slice(1)) {
         iframeContents[i].click();
+        iframeContents[i].click();
+        currentLanguage = language;
       }
     }
+
+    document.getElementsByTagName("body")[0].style.marginTop = "-40px";
   }
+
+  setInterval(() => {
+    successCalculatorTranslationFix();
+  }, 500);
 };
 
 const openSupportChat = () => {
@@ -324,12 +379,6 @@ const successCalculator = (e) => {
   let formError = false;
 
   let formFeedback = formFeedbackDict.successCalculatorFormFeedback;
-
-  if (currentLanguage === "en") {
-    formFeedback = formFeedbackDict.successCalculatorFormFeedback.en;
-  } else if (currentLanguage === "fr") {
-    formFeedback = formFeedbackDict.successCalculatorFormFeedback.fr;
-  }
 
   let ids = [
     "oralComprehension",
@@ -445,6 +494,34 @@ const successCalculator = (e) => {
   h1.classList.remove("err");
 };
 
+const successCalculatorTranslationFix = () => {
+  if (page === "successCalculator") {
+    ids = [
+      "oralComprehension",
+      "writtenComprehension",
+      "oralExpression",
+      "writtenExpression",
+    ];
+
+    for (let i = 0; i < ids.length; i++) {
+      console.log("ssss");
+      const element = document.getElementById(ids[i]);
+      element.options[0].value = "A1";
+      element.options[0].innerText = "A1";
+      element.options[1].value = "A2";
+      element.options[1].innerText = "A2";
+      element.options[2].value = "B1";
+      element.options[2].innerText = "B1";
+      element.options[3].value = "B2";
+      element.options[3].innerText = "B2";
+      element.options[4].value = "C1";
+      element.options[4].innerText = "C1";
+      element.options[5].value = "C2";
+      element.options[5].innerText = "C2";
+    }
+  }
+};
+
 const passwordShowHide = () => {
   let passwordInput = document.getElementById("password");
   if (isPasswordVisible) {
@@ -466,12 +543,6 @@ const loginFormHandler = (e) => {
   let formAnswers = {};
   let formError = false;
   let formFeedback = formFeedbackDict.loginFormFeedback;
-
-  if (currentLanguage === "en") {
-    formFeedback = formFeedbackDict.loginFormFeedback.en;
-  } else if (currentLanguage === "fr") {
-    formFeedback = formFeedbackDict.loginFormFeedback.fr;
-  }
 
   let ids = ["email", "password"];
 
@@ -503,16 +574,6 @@ const registerFormHandler = (e) => {
   let lang;
   let formError = false;
   let formFeedback = formFeedbackDict.registerFormFeedback;
-
-  let pageLanguage = document.getElementById("lang").innerText;
-
-  if (pageLanguage === "en") {
-    lang = English;
-    formFeedback = formFeedbackDict.loginFormFeedback.en;
-  } else if (pageLanguage === "fr") {
-    lang = French;
-    formFeedback = formFeedbackDict.loginFormFeedback.fr;
-  }
 
   let ids = [
     "fullname",
@@ -566,7 +627,7 @@ const registerFormHandler = (e) => {
   switch (registerFormStep) {
     case 5:
       document.getElementById("registerationFormItem").innerHTML =
-        lang.register.data.formSteps[`step${registerFormStep}`];
+        RegisterFormSteps[`step${registerFormStep}`];
 
       let selectElement5 = document.getElementById(ids[registerFormStep - 1]);
 
@@ -580,7 +641,7 @@ const registerFormHandler = (e) => {
 
     case 6:
       document.getElementById("registerationFormItem").innerHTML =
-        lang.register.data.formSteps[`step${registerFormStep}`];
+        RegisterFormSteps[`step${registerFormStep}`];
 
       let selectElement6 = document.getElementById(ids[registerFormStep - 1]);
 
@@ -594,7 +655,7 @@ const registerFormHandler = (e) => {
 
     case 9:
       document.getElementById("registerationFormItem").innerHTML =
-        lang.register.data.formSteps[`step${registerFormStep}`];
+        RegisterFormSteps[`step${registerFormStep}`];
 
       document.getElementById("formBtn").innerText = "Register";
       break;
@@ -605,7 +666,7 @@ const registerFormHandler = (e) => {
 
     default:
       document.getElementById("registerationFormItem").innerHTML =
-        lang.register.data.formSteps[`step${registerFormStep}`];
+        RegisterFormSteps[`step${registerFormStep}`];
       break;
   }
 };
@@ -641,8 +702,8 @@ const navBarInit = async () => {
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     {
-      pageLanguage: "en", // Change 'en' to your default language code
-      includedLanguages: "en,fr,ar", // Add the languages you want to include
+      pageLanguage: "en",
+      includedLanguages: "en,fr,ar",
       layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
     },
     "google_translate_element"
