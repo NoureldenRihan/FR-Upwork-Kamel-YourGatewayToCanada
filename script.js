@@ -281,6 +281,7 @@ const countries = [
 
 let currentLanguage = "English";
 let isPasswordVisible = false;
+let didLanguageChange = false;
 let registerFormStep = 1;
 let registrationFormAnswers = {};
 
@@ -319,6 +320,14 @@ const convertWebsiteLanguage = (language) => {
   )[0];
 
   const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+  if (didLanguageChange === false) {
+    if (language === "English") {
+      return;
+    } else {
+      didLanguageChange = true;
+    }
+  }
 
   if (iframeDoc) {
     const iframeContents = iframeDoc.querySelectorAll(
