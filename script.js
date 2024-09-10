@@ -342,8 +342,6 @@ const convertWebsiteLanguage = (language) => {
         currentLanguage = language;
       }
     }
-
-    document.getElementsByTagName("body")[0].style.marginTop = "-40px";
   }
 
   setInterval(() => {
@@ -513,7 +511,6 @@ const successCalculatorTranslationFix = () => {
     ];
 
     for (let i = 0; i < ids.length; i++) {
-      console.log("ssss");
       const element = document.getElementById(ids[i]);
       element.options[0].value = "A1";
       element.options[0].innerText = "A1";
