@@ -342,17 +342,20 @@ const convertWebsiteLanguage = (language) => {
 
       if (
         elementText === "الإنجليزية" ||
-        elementText.toLowerCase() === "anglaise"
+        elementText.toLowerCase() === "anglaise" ||
+        elementText.toLowerCase() === "English"
       ) {
         finalText = "English";
       } else if (
         elementText === "العربية" ||
-        elementText.toLowerCase() === "arabe"
+        elementText.toLowerCase() === "arabe" ||
+        elementText.toLowerCase() === "Arabic"
       ) {
         finalText = "Arabic";
       } else if (
         elementText === "الفرنسية" ||
-        elementText.toLowerCase() === "français"
+        elementText.toLowerCase() === "français" ||
+        elementText.toLowerCase() === "French"
       ) {
         finalText = "French";
       }
@@ -524,29 +527,27 @@ const successCalculator = (e) => {
 };
 
 const successCalculatorTranslationFix = () => {
-  if (page === "successCalculator") {
-    ids = [
-      "oralComprehension",
-      "writtenComprehension",
-      "oralExpression",
-      "writtenExpression",
-    ];
+  ids = [
+    "oralComprehension",
+    "writtenComprehension",
+    "oralExpression",
+    "writtenExpression",
+  ];
 
-    for (let i = 0; i < ids.length; i++) {
-      const element = document.getElementById(ids[i]);
-      element.options[0].value = "A1";
-      element.options[0].innerText = "A1";
-      element.options[1].value = "A2";
-      element.options[1].innerText = "A2";
-      element.options[2].value = "B1";
-      element.options[2].innerText = "B1";
-      element.options[3].value = "B2";
-      element.options[3].innerText = "B2";
-      element.options[4].value = "C1";
-      element.options[4].innerText = "C1";
-      element.options[5].value = "C2";
-      element.options[5].innerText = "C2";
-    }
+  for (let i = 0; i < ids.length; i++) {
+    const element = document.getElementById(ids[i]);
+    element.options[0].value = "A1";
+    element.options[0].innerText = "A1";
+    element.options[1].value = "A2";
+    element.options[1].innerText = "A2";
+    element.options[2].value = "B1";
+    element.options[2].innerText = "B1";
+    element.options[3].value = "B2";
+    element.options[3].innerText = "B2";
+    element.options[4].value = "C1";
+    element.options[4].innerText = "C1";
+    element.options[5].value = "C2";
+    element.options[5].innerText = "C2";
   }
 };
 
