@@ -321,55 +321,65 @@ const convertWebsiteLanguage = (language) => {
 
   const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-  if (didLanguageChange === false) {
-    if (language === "English") {
-      return;
-    } else {
-      didLanguageChange = true;
-    }
-  }
-
   if (iframeDoc) {
     const iframeContents = iframeDoc.querySelectorAll(
       "a.VIpgJd-ZVi9od-vH1Gmf-ibnC6b"
     );
 
-    for (let i = 0; i < iframeContents.length; i++) {
-      const elementText = iframeContents[i].textContent.slice(1);
-      console.log(language);
-      console.log(elementText);
-      let finalText = elementText;
+    let num = 0;
 
-      if (
-        elementText === "الإنجليزية" ||
-        elementText.toLowerCase() === "anglaise" ||
-        elementText.toLowerCase() === "English"
-      ) {
-        finalText = "English";
-      } else if (
-        elementText === "العربية" ||
-        elementText.toLowerCase() === "arabe" ||
-        elementText.toLowerCase() === "Arabic"
-      ) {
-        finalText = "Arabic";
-      } else if (
-        elementText === "الفرنسية" ||
-        elementText.toLowerCase() === "français" ||
-        elementText.toLowerCase() === "French"
-      ) {
-        finalText = "French";
-      }
+    if (currentLanguage === language) {
+      return;
+    }
 
-      if (language === finalText) {
-        console.log("Clicking Language");
-        iframeContents[i].click();
-        iframeContents[i].click();
+    switch (currentLanguage) {
+      case "Arabic":
+        if (language === "English") {
+          num = 0;
+        } else if (language === "French") {
+          num = 1;
+        } else {
+          break;
+        }
+
+        iframeContents[num].click();
+        iframeContents[num].click();
         currentLanguage = language;
-      }
+        break;
+      case "English":
+        if (language === "Arabic") {
+          num = 0;
+        } else if (language === "French") {
+          num = 1;
+        } else {
+          break;
+        }
+
+        iframeContents[num].click();
+        iframeContents[num].click();
+        currentLanguage = language;
+        break;
+      case "French":
+        if (language === "Arabic") {
+          num = 0;
+        } else if (language === "English") {
+          num = 1;
+        } else {
+          break;
+        }
+
+        iframeContents[num].click();
+        iframeContents[num].click();
+        currentLanguage = language;
+        break;
+
+      default:
+        console.log("Unknown language");
+        break;
     }
   }
 
-  setInterval(() => {
+  setTimeout(() => {
     successCalculatorTranslationFix();
   }, 500);
 };
@@ -527,27 +537,29 @@ const successCalculator = (e) => {
 };
 
 const successCalculatorTranslationFix = () => {
-  ids = [
-    "oralComprehension",
-    "writtenComprehension",
-    "oralExpression",
-    "writtenExpression",
-  ];
+  if (page === "successCalculator") {
+    ids = [
+      "oralComprehension",
+      "writtenComprehension",
+      "oralExpression",
+      "writtenExpression",
+    ];
 
-  for (let i = 0; i < ids.length; i++) {
-    const element = document.getElementById(ids[i]);
-    element.options[0].value = "A1";
-    element.options[0].innerText = "A1";
-    element.options[1].value = "A2";
-    element.options[1].innerText = "A2";
-    element.options[2].value = "B1";
-    element.options[2].innerText = "B1";
-    element.options[3].value = "B2";
-    element.options[3].innerText = "B2";
-    element.options[4].value = "C1";
-    element.options[4].innerText = "C1";
-    element.options[5].value = "C2";
-    element.options[5].innerText = "C2";
+    for (let i = 0; i < ids.length; i++) {
+      const element = document.getElementById(ids[i]);
+      element.options[0].value = "A1";
+      element.options[0].innerText = "A1";
+      element.options[1].value = "A2";
+      element.options[1].innerText = "A2";
+      element.options[2].value = "B1";
+      element.options[2].innerText = "B1";
+      element.options[3].value = "B2";
+      element.options[3].innerText = "B2";
+      element.options[4].value = "C1";
+      element.options[4].innerText = "C1";
+      element.options[5].value = "C2";
+      element.options[5].innerText = "C2";
+    }
   }
 };
 
