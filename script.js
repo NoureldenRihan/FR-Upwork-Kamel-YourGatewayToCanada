@@ -335,8 +335,30 @@ const convertWebsiteLanguage = (language) => {
     );
 
     for (let i = 0; i < iframeContents.length; i++) {
-      const elementText = iframeContents[i].textContent;
-      if (language === elementText.slice(1)) {
+      const elementText = iframeContents[i].textContent.slice(1);
+      console.log(language);
+      console.log(elementText);
+      let finalText = elementText;
+
+      if (
+        elementText === "الإنجليزية" ||
+        elementText.toLowerCase() === "anglaise"
+      ) {
+        finalText = "English";
+      } else if (
+        elementText === "العربية" ||
+        elementText.toLowerCase() === "arabe"
+      ) {
+        finalText = "Arabic";
+      } else if (
+        elementText === "الفرنسية" ||
+        elementText.toLowerCase() === "français"
+      ) {
+        finalText = "French";
+      }
+
+      if (language === finalText) {
+        console.log("Clicking Language");
         iframeContents[i].click();
         iframeContents[i].click();
         currentLanguage = language;
@@ -711,6 +733,7 @@ function googleTranslateElementInit() {
       pageLanguage: "en",
       includedLanguages: "en,fr,ar",
       layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false,
     },
     "google_translate_element"
   );
