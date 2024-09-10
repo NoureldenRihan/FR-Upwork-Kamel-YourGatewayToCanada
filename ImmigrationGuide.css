@@ -1,0 +1,152 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.immigrationGuideTitle h1 {
+  font-weight: bold;
+  color: var(--primary);
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.sectionTitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.freeSection section,
+.paidSection section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+}
+
+.freeSection section:hover,
+.paidSection section:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.freeSection section h1,
+.paidSection section h1 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.freeSection section h2,
+.paidSection section h2 {
+  color: var(--white);
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.paidSection section button {
+  display: block;
+  color: var(--white);
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  margin: 20px 0 0 0;
+  background-color: var(--secondary);
+  width: fit-content;
+  font-size: 20px;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.paidSection section button a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.paidSection section button:hover {
+  transform: translateY(-3px);
+  background-color: var(--secondaryHover);
+}
+
+@media (max-width: 650px) {
+  .immigrationGuideTitle h1 {
+    font-size: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .freeSection section h1,
+  .paidSection section h1 {
+    font-size: 18px;
+  }
+
+  .freeSection section h2,
+  .paidSection section h2 {
+    font-size: 13px;
+  }
+
+  .paidSection section button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 850px) {
+  .immigrationGuideTitle h1 {
+    font-size: 35px;
+  }
+
+  .sectionTitle {
+    font-size: 25px;
+  }
+
+  .freeSection section h1,
+  .paidSection section h1 {
+    font-size: 22px;
+  }
+
+  .freeSection section h2,
+  .paidSection section h2 {
+    font-size: 16px;
+  }
+
+  .paidSection section button {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  .immigrationGuideTitle h1 {
+    font-size: 45px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  .freeSection section h1,
+  .paidSection section h1 {
+    font-size: 25px;
+  }
+
+  .freeSection section h2,
+  .paidSection section h2 {
+    font-size: 18px;
+  }
+
+  .paidSection section button {
+    font-size: 20px;
+  }
+}
