@@ -23,7 +23,6 @@ main {
   width: fit-content;
   margin: auto;
   border-radius: 9999px;
-  padding: 10px 15px;
 }
 
 .result h1.err {

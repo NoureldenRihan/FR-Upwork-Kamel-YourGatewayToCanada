@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حاسبة SCG - بوابتك إلى كندا</title>
+    <link rel="stylesheet" href="SuccessCalculator.css" />
+    <link rel="stylesheet" href="Navbar.css" />
+  </head>
+  <body>
+    <span id="pageName" data-name="SuccessCalculator" hidden></span>
+    <nav id="navbar"></nav>
+    <!-- Start Success Calculator Section -->
+    <div class="result"><h1 id="result"></h1></div>
+    <main>
+      <section class="calculatorForm">
+        <form id="successCalculatorForm">
+          <h1 id="formTitle" class="title">حاسبة SCG</h1>
+          <div class="formItem">
+            <div class="specialLabel">
+              <label for="oralComprehension"> الفهم الشفهي:</label
+              ><button class="guideBtn">
+                <a href="https://pigier-algerie.com/lang/">
+                  قم بإجراء اختبار مستوى اللغة</a
+                >
+              </button>
+            </div>
+            <div class="selectContainer">
+              <select name="oralComprehension" id="oralComprehension">
+                <option value="A1" selected>أ1</option>
+                <option value="A2">أ2</option>
+                <option value="B1">ب1</option>
+                <option value="B2">ب2</option>
+                <option value="C1">ج1</option>
+                <option value="C2">سي 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="formItem">
+            <label for="writtenComprehension"> الفهم الكتابي:</label>
+            <div class="selectContainer">
+              <select name="writtenComprehension" id="writtenComprehension">
+                <option value="A1" selected>أ1</option>
+                <option value="A2">أ2</option>
+                <option value="B1">ب1</option>
+                <option value="B2">ب2</option>
+                <option value="C1">ج1</option>
+                <option value="C2">سي 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="formItem">
+            <label for="oralExpression"> التعبير الشفهي:</label>
+            <div class="selectContainer">
+              <select name="oralExpression" id="oralExpression">
+                <option value="A1" selected>أ1</option>
+                <option value="A2">أ2</option>
+                <option value="B1">ب1</option>
+                <option value="B2">ب2</option>
+                <option value="C1">ج1</option>
+                <option value="C2">سي 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="formItem">
+            <label for="writtenExpression"> التعبير الكتابي:</label>
+            <div class="selectContainer">
+              <select name="writtenExpression" id="writtenExpression">
+                <option value="A1" selected>أ1</option>
+                <option value="A2">أ2</option>
+                <option value="B1">ب1</option>
+                <option value="B2">ب2</option>
+                <option value="C1">ج1</option>
+                <option value="C2">سي 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="formItem">
+            <div class="specialLabel">
+              <label for="educationLevel"> المستوى التعليمي:</label
+              ><button class="guideBtn">
+                <a href="https://applications.wes.org/degree-equivalency-tool/">
+                  أداة معادلة الدرجة العلمية</a
+                >
+              </button>
+            </div>
+            <div class="selectContainer">
+              <select name="educationLevel" id="educationLevel">
+                <option value="Bac+7" selected>باك+7</option>
+                <option value="Bac+5">باك+5</option>
+                <option value="Bac+3">باك+3</option>
+                <option value="Bac+2">باك+2</option>
+              </select>
+            </div>
+          </div>
+          <div class="formItem">
+            <label for="professionalExperience">
+              الخبرة المهنية (بالسنوات المعلنة مع التأمين):</label
+            ><input
+              id="professionalExperience"
+              class="formInput"
+              type="number"
+              placeholder="Number of Years"
+              min="0"
+            />
+          </div>
+          <div class="formItem">
+            <label for="age"> عمر:</label
+            ><input
+              id="age"
+              class="formInput"
+              type="number"
+              placeholder="Your Age"
+              min="0"
+            />
+          </div>
+          <div class="formItem">
+            <label for="sectorOfActivity"> قطاع النشاط:</label>
+            <div class="selectContainer">
+              <select name="sectorOfActivity" id="sectorOfActivity">
+                <optgroup label="Sector Of Activity">
+                  <option value="Sector of Activity" selected>
+                    قطاع النشاط
+                  </option>
+                </optgroup>
+                <optgroup label="Health Sector">
+                  <option value="Paramedic">مسعف</option>
+                  <option value="Audiologist">أخصائي السمع</option>
+                  <option value="Social and Health Services Auxiliary">
+                    الخدمات الاجتماعية والصحية المساعدة
+                  </option>
+                  <option value="Dentist">طبيب أسنان</option>
+                  <option value="Nurse">ممرضة</option>
+                  <option value="Practical Nurse">ممرضة عملية</option>
+                  <option value="Specialist Doctor and Family Doctor">
+                    طبيب متخصص وطبيب عائلة
+                  </option>
+                  <option value="Optometrist">طبيب عيون</option>
+                  <option value="Nursing Assistant">مساعد التمريض</option>
+                  <option value="Pharmacist">صيدلي</option>
+                </optgroup>
+                <optgroup label="Social Services and Education">
+                  <option value="Early Childhood Educator">
+                    معلمة الطفولة المبكرة
+                  </option>
+                  <option value="Childcare Worker">عامل رعاية الأطفال</option>
+                  <option value="Social Worker and Community Worker">
+                    الأخصائي الاجتماعي والعامل المجتمعي
+                  </option>
+                  <option value="Psychologist">طبيب نفسي</option>
+                </optgroup>
+                <optgroup
+                  label="Natural Sciences, Transportation, and Aerospace"
+                >
+                  <option value="Aerospace Engineer">مهندس طيران</option>
+                  <option value="Software Engineer">مهندس برمجيات</option>
+                  <option value="Transport Services Control Officer">
+                    ضابط مراقبة خدمات النقل
+                  </option>
+                  <option value="Statistician and Actuary">
+                    إحصائي وخبير اكتواري
+                  </option>
+                  <option
+                    value="Mechanical Engineering Technologist and Technician"
+                  >
+                    فني وتقني هندسة ميكانيكية
+                  </option>
+                  <option
+                    value="Industrial Engineering and Manufacturing Technologist and Technician"
+                  >
+                    مهندس صناعي وتقني وفنّي تصنيع
+                  </option>
+                </optgroup>
+                <optgroup label="Applied Sciences and Information Technology">
+                  <option value="IT Analyst and Consultant">
+                    محلل ومستشار تكنولوجيا المعلومات
+                  </option>
+                  <option value="Database Analyst">محلل قاعدة البيانات</option>
+                  <option value="Technical Support Analyst">
+                    محلل الدعم الفني
+                  </option>
+                  <option value="Graphic Designer">مصمم جرافيك</option>
+                  <option value="Illustrator">الرسام التوضيحي</option>
+                  <option value="IT Manager">مدير تكنولوجيا المعلومات</option>
+                  <option value="Software Engineer and Designer">
+                    مهندس ومصمم برمجيات
+                  </option>
+                  <option value="Web Developer">مطور ويب</option>
+                </optgroup>
+                <optgroup label="Sales and Marketing">
+                  <option value="Marketing Analyst">محلل تسويق</option>
+                  <option value="Financial Analyst">محلل مالي</option>
+                  <option value="Sales Associate">مساعد مبيعات</option>
+                  <option value="Sales Director">مدير المبيعات</option>
+                  <option value="Account Manager">مدير الحسابات</option>
+                  <option value="Sales Representative">مندوب مبيعات</option>
+                  <option value="Customer Service">خدمة العملاء</option>
+                  <option value="Digital Marketing Specialist">
+                    أخصائي التسويق الرقمي
+                  </option>
+                </optgroup>
+                <optgroup label="Other Sectors">
+                  <option value="Administrative Assistant">مساعد اداري</option>
+                  <option value="Cashier">أمين الصندوق</option>
+                  <option value="Truck Driver">سائق شاحنة</option>
+                  <option value="Accountant">محاسب</option>
+                  <option value="Cook">يطبخ</option>
+                  <option value="Project Manager">مدير المشروع</option>
+                  <option value="Receptionist">موظفة استقبال</option>
+                  <option value="Waiter">النادل</option>
+                  <option value="Fruit and Vegetable Picker">
+                    قطف الفاكهة والخضروات
+                  </option>
+                  <option value="Warehouse Worker">عامل مستودع</option>
+                  <option value="Sales Representative">مندوب مبيعات</option>
+                  <option value="Truck Driver">سائق شاحنة</option>
+                  <option value="Welder">لحام</option>
+                  <option value="Web Developer">مطور ويب</option>
+                  <option value="Business Development Manager">
+                    مدير تطوير الأعمال
+                  </option>
+                  <option value="Laborer">عامل</option>
+                  <option value="Mechanic">ميكانيكي</option>
+                  <option value="Human Resources Director">
+                    مدير الموارد البشرية
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <button id="formBtn" type="submit">حساب</button>
+        </form>
+      </section>
+    </main>
+    <script src="Navbar.js"></script>
+    <script src="SuccessCalculator.js"></script>
+  </body>
+</html>

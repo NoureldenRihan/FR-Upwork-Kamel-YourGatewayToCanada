@@ -3,26 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Your Gateway to Canada</title>
+    <title>تسجيل الدخول - بوابتك إلى كندا</title>
     <link rel="stylesheet" href="Navbar.css" />
     <link rel="stylesheet" href="Login.css" />
   </head>
   <body>
-    <!-- Used to identify page when translating -->
-    <span id="pageName" data-name="Login" hidden></span>
+    <!-- Used to identify page when translating --><span
+      id="pageName"
+      data-name="Login"
+      hidden
+    ></span>
     <nav id="navbar"></nav>
-
     <!-- Start Login Section -->
-    <div class="result">
-      <h1 id="result"></h1>
-    </div>
-
+    <div class="result"><h1 id="result"></h1></div>
     <main>
       <section class="loginForm">
         <form id="loginForm">
           <div class="formItem">
-            <label for="professionalExperience">Email Address</label>
-            <input
+            <label for="professionalExperience"> عنوان البريد الإلكتروني </label
+            ><input
               id="email"
               class="formInput"
               type="email"
@@ -30,43 +29,40 @@
             />
           </div>
           <div class="formItem">
-            <label for="password">Password</label>
+            <label for="password"> كلمة المرور </label>
             <div class="passinput">
               <input
                 id="password"
                 class="formInput"
                 type="password"
                 placeholder="Password"
-              />
-              <img
+              /><img
                 src="media/SVGs/passwordEye.svg"
-                alt="Password show/hide"
+                alt="إظهار/إخفاء كلمة المرور"
                 onclick="passwordShowHide();"
               />
             </div>
           </div>
-          <button id="formBtn">Login</button>
+          <button id="formBtn">تسجيل الدخول</button>
         </form>
       </section>
       <section class="info">
         <div class="text">
-          <h1 id="title">Login Now!</h1>
-          <h2 id="subtitle">Login to Access and Manage Your Account!</h2>
+          <h1 id="title">سجل دخولك الآن!</h1>
+          <h2 id="subtitle">تسجيل الدخول للوصول إلى حسابك وإدارته!</h2>
           <h2 id="option">
-            Don't Have an Account? <a href="Register.html">Register Now</a>
+            ليس لديك حساب؟<a href="Register.html"> سجل الآن </a>
           </h2>
         </div>
         <div class="icon">
           <img
             src="media/SVGs/Login and Register Illustration.svg"
-            alt="Login Illustration"
+            alt="تسجيل الدخول التوضيحي"
           />
         </div>
       </section>
     </main>
-
     <!-- End Login Section -->
-
     <script src="script.js"></script>
   </body>
 </html>

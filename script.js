@@ -286,33 +286,37 @@ let registrationFormAnswers = {};
 let page = "";
 
 window.onload = async () => {
-  page = document.getElementById("pageName").innerText;
+  page = document.getElementById("pageName").getAttribute("data-name");
 
   await navBarInit();
 
   isPasswordVisible = false;
   registerFormStep = 1;
 
-  if (page === "successCalculator") {
-    const successCalculatorForm = document.getElementById(
-      "successCalculatorForm"
-    );
-
-    successCalculatorForm.addEventListener("submit", (e) =>
-      successCalculator(e)
-    );
-  } else if (page === "login") {
-    const loginForm = document.getElementById("loginForm");
-
-    loginForm.addEventListener("submit", (e) => loginFormHandler(e));
-  } else if (page === "register") {
-    const registerForm = document.getElementById("registerForm");
-
-    registerForm.addEventListener("submit", (e) => registerFormHandler(e));
-  }
+  eventListenerHandler();
 };
 
-const TranslateWebsite = (language) => {};
+const TranslateWebsite = async (language) => {
+  let lang = "";
+  if (language === "English") {
+    goToPage(page);
+    return;
+  } else if (language === "French") {
+    lang = "fr";
+  } else if (language === "Arabic") {
+    lang = "ar";
+  }
+
+  await fetch(`Translations/${lang}/${page}.html`)
+    .then((response) => response.text())
+    .then((htmlContent) => {
+      document.getElementsByTagName("body")[0].innerHTML = htmlContent;
+    });
+
+  await navBarInit(language);
+
+  eventListenerHandler();
+};
 
 const openSupportChat = () => {
   window.scrollTo(0, 0);
@@ -463,6 +467,7 @@ const successCalculator = (e) => {
   }
 
   h1.innerText = formFeedback.FormSuccessMsg + ` ${percentage}%`;
+  h1.style.padding = "10px 15px";
   h1.classList.remove("err");
 };
 
@@ -474,6 +479,26 @@ const passwordShowHide = () => {
   } else {
     passwordInput.type = "text";
     isPasswordVisible = true;
+  }
+};
+
+const eventListenerHandler = () => {
+  if (page === "SuccessCalculator") {
+    const successCalculatorForm = document.getElementById(
+      "successCalculatorForm"
+    );
+
+    successCalculatorForm.addEventListener("submit", (e) =>
+      successCalculator(e)
+    );
+  } else if (page === "Login") {
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", (e) => loginFormHandler(e));
+  } else if (page === "Register") {
+    const registerForm = document.getElementById("registerForm");
+
+    registerForm.addEventListener("submit", (e) => registerFormHandler(e));
   }
 };
 
@@ -615,8 +640,15 @@ const registerFormHandler = (e) => {
   }
 };
 
-const navBarInit = async () => {
-  await fetch("NavbarSnippet.html")
+const navBarInit = async (language) => {
+  let query = "NavbarSnippet.html";
+  if (language === "French") {
+    query = "Translations/fr/NavbarSnippet.html";
+  } else if (language === "Arabic") {
+    query = "Translations/ar/NavbarSnippet.html";
+  }
+
+  await fetch(query)
     .then((response) => response.text())
     .then((htmlContent) => {
       document.getElementById("navbar").innerHTML = htmlContent;
