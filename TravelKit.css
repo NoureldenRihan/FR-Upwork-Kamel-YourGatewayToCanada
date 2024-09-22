@@ -24,6 +24,10 @@ ul {
   font-size: 20px;
 }
 
+.travelKitItem {
+  margin-bottom: 10px;
+}
+
 .travelKitItem p {
   font-weight: normal;
   color: var(--white);

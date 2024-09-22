@@ -26,6 +26,10 @@ ul {
   font-size: 20px;
 }
 
+.arrivalKitItem {
+  margin-bottom: 10px;
+}
+
 .arrivalKitItem p {
   font-weight: normal;
   color: var(--white);
