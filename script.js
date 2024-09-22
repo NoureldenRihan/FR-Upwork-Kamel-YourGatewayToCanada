@@ -279,9 +279,7 @@ const countries = [
   "Zimbabwe",
 ];
 
-let currentLanguage = "English";
 let isPasswordVisible = false;
-let didLanguageChange = false;
 let registerFormStep = 1;
 let registrationFormAnswers = {};
 
@@ -313,6 +311,8 @@ window.onload = async () => {
     registerForm.addEventListener("submit", (e) => registerFormHandler(e));
   }
 };
+
+const TranslateWebsite = (language) => {};
 
 const openSupportChat = () => {
   window.scrollTo(0, 0);
