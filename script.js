@@ -65,18 +65,49 @@ let RegisterFormSteps = {
 };
 
 let formFeedbackDict = {
-  successCalculatorFormFeedback: {
-    FormErrorMsg: "All Fields are required",
-    FormIneligibleMsg:
-      "ERROR: Your application is not eligible for Express Entry.",
-    FormSuccessMsg: "Your success rate is estimated to",
+  English: {
+    successCalculatorFormFeedback: {
+      FormErrorMsg: "All Fields are required",
+      FormIneligibleMsg:
+        "ERROR: Your application is not eligible for Express Entry.",
+      FormSuccessMsg: "Your success rate is estimated to",
+    },
+    loginFormFeedback: {
+      FormErrorMsg: "All Fields are required",
+      FormIneligibleMsg: "Incorrect Login Details",
+    },
+    registerFormFeedback: {
+      FormErrorMsg: "All Fields are required",
+    },
   },
-  loginFormFeedback: {
-    FormErrorMsg: "All Fields are required",
-    FormIneligibleMsg: "Incorrect Login Details",
+  French: {
+    successCalculatorFormFeedback: {
+      FormErrorMsg: "Tous les champs sont requis",
+      FormIneligibleMsg:
+        "ERREUR : Votre demande n'est pas éligible pour Entrée Express.",
+      FormSuccessMsg: "Votre taux de succès est estimé à",
+    },
+    loginFormFeedback: {
+      FormErrorMsg: "Tous les champs sont requis",
+      FormIneligibleMsg: "Détails de connexion incorrects",
+    },
+    registerFormFeedback: {
+      FormErrorMsg: "Tous les champs sont requis",
+    },
   },
-  registerFormFeedback: {
-    FormErrorMsg: "All Fields are required",
+  Arabic: {
+    successCalculatorFormFeedback: {
+      FormErrorMsg: "جميع الحقول مطلوبة",
+      FormIneligibleMsg: "خطأ: طلبك غير مؤهل لبرنامج الدخول السريع.",
+      FormSuccessMsg: "تم تقدير معدل نجاحك",
+    },
+    loginFormFeedback: {
+      FormErrorMsg: "جميع الحقول مطلوبة",
+      FormIneligibleMsg: "تفاصيل تسجيل الدخول غير صحيحة",
+    },
+    registerFormFeedback: {
+      FormErrorMsg: "جميع الحقول مطلوبة",
+    },
   },
 };
 
@@ -282,16 +313,24 @@ const countries = [
 let isPasswordVisible = false;
 let registerFormStep = 1;
 let registrationFormAnswers = {};
+let pageLanguage = "English";
 
 let page = "";
 
 window.onload = async () => {
   page = document.getElementById("pageName").getAttribute("data-name");
 
-  await navBarInit();
-
   isPasswordVisible = false;
   registerFormStep = 1;
+
+  let localStorageLanguage = localStorage.getItem("language");
+
+  if (localStorageLanguage !== "English" && localStorageLanguage !== null) {
+    TranslateWebsite(localStorageLanguage);
+    return;
+  }
+
+  await navBarInit();
 
   eventListenerHandler();
 };
@@ -299,6 +338,8 @@ window.onload = async () => {
 const TranslateWebsite = async (language) => {
   let lang = "";
   if (language === "English") {
+    localStorage.setItem("language", language);
+    pageLanguage = language;
     goToPage(page);
     return;
   } else if (language === "French") {
@@ -316,6 +357,9 @@ const TranslateWebsite = async (language) => {
   await navBarInit(language);
 
   eventListenerHandler();
+
+  localStorage.setItem("language", language);
+  pageLanguage = language;
 };
 
 const openSupportChat = () => {
@@ -347,6 +391,7 @@ const successCalculator = (e) => {
 
   let h1 = document.getElementById("result");
   h1.innerText = "";
+  h1.style.padding = "10px 15px";
   h1.classList.remove("err");
 
   window.scrollTo(0, 0);
@@ -354,7 +399,8 @@ const successCalculator = (e) => {
   let formAnswers = {};
   let formError = false;
 
-  let formFeedback = formFeedbackDict.successCalculatorFormFeedback;
+  let formFeedback =
+    formFeedbackDict[pageLanguage].successCalculatorFormFeedback;
 
   let ids = [
     "oralComprehension",
@@ -467,7 +513,6 @@ const successCalculator = (e) => {
   }
 
   h1.innerText = formFeedback.FormSuccessMsg + ` ${percentage}%`;
-  h1.style.padding = "10px 15px";
   h1.classList.remove("err");
 };
 
@@ -511,7 +556,7 @@ const loginFormHandler = (e) => {
 
   let formAnswers = {};
   let formError = false;
-  let formFeedback = formFeedbackDict.loginFormFeedback;
+  let formFeedback = formFeedbackDict[pageLanguage].loginFormFeedback;
 
   let ids = ["email", "password"];
 
@@ -540,9 +585,8 @@ const registerFormHandler = (e) => {
   h1.innerText = "";
   h1.classList.remove("err");
 
-  let lang;
   let formError = false;
-  let formFeedback = formFeedbackDict.registerFormFeedback;
+  let formFeedback = formFeedbackDict[pageLanguage].registerFormFeedback;
 
   let ids = [
     "fullname",
