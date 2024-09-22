@@ -1,67 +1,199 @@
 let RegisterFormSteps = {
-  step1: `<label for="Full Name">Full Name</label><input
-        id="fullname"
-        class="formInput"
-        type="text"
-        placeholder="Full Name"
-      />`,
-  step2: `<label for="Email Address">Email Address</label><input
-        id="email"
-        class="formInput"
-        type="email"
-        placeholder="Email Address"
-      />`,
-  step3: `<label for="Phone Number">Phone Number</label><input
-        id="phonenumber"
-        class="formInput"
-        type="text"
-        placeholder="Phone Number"
-      />`,
-  step4: `<label for="Gender">Gender</label><div class="selectContainer">
-        <select name="gender" id="gender">
-          <option value="Gender" selected>Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Don't Specify">Don't Specify</option>
-        </select>
-      </div>`,
-  step5: `<label for="Country of Citizenship">Country of Citizenship</label><div class="selectContainer">
-        <select name="Country of Citizenship" id="Country of Citizenship">
-          <option value="Country of Citizenship" selected>Country of Citizenship</option>
-        </select>
-      </div>`,
-  step6: `<label for="Country of Residence">Country of Residence</label><div class="selectContainer">
-        <select name="Country of Residence" id="Country of Residence">
-          <option value="Country of Residence" selected>Country of Residence</option>
-        </select>
-      </div>`,
-  step7: `<label for="Marital Status">Marital Status</label><div class="selectContainer">
-        <select name="Marital Status" id="Marital Status">
-          <option value="Marital Status" selected>Marital Status</option>
-          <option value="Single" >Single</option>
-          <option value="Married" >Married</option>
-          <option value="Divorced" >Divorced</option>
-          <option value="Widowed" >Widowed</option>
-        </select>
-      </div>`,
-  step8: `<label for="Date of Birth">Date of Birth</label><input
-        id="dateofbirth"
-        class="formInput"
-        type="date"
-      />`,
-  step9: `<label for="Password">Password</label><div class="passinput">
-        <input
-          id="password"
+  English: {
+    step1: `<label for="Full Name">Full Name</label><input
+          id="fullname"
           class="formInput"
-          type="password"
-          placeholder="Password"
-        />
-        <img
-          src="media/SVGs/passwordEye.svg"
-          alt="Password show/hide"
-          onclick="passwordShowHide();"
-        />
-      </div>`,
+          type="text"
+          placeholder="Full Name"
+        />`,
+    step2: `<label for="Email Address">Email Address</label><input
+          id="email"
+          class="formInput"
+          type="email"
+          placeholder="Email Address"
+        />`,
+    step3: `<label for="Phone Number">Phone Number</label><input
+          id="phonenumber"
+          class="formInput"
+          type="text"
+          placeholder="Phone Number"
+        />`,
+    step4: `<label for="Gender">Gender</label><div class="selectContainer">
+          <select name="gender" id="gender">
+            <option value="Gender" selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Don't Specify">Don't Specify</option>
+          </select>
+        </div>`,
+    step5: `<label for="Country of Citizenship">Country of Citizenship</label><div class="selectContainer">
+          <select name="Country of Citizenship" id="Country of Citizenship">
+            <option value="Country of Citizenship" selected>Country of Citizenship</option>
+          </select>
+        </div>`,
+    step6: `<label for="Country of Residence">Country of Residence</label><div class="selectContainer">
+          <select name="Country of Residence" id="Country of Residence">
+            <option value="Country of Residence" selected>Country of Residence</option>
+          </select>
+        </div>`,
+    step7: `<label for="Marital Status">Marital Status</label><div class="selectContainer">
+          <select name="Marital Status" id="Marital Status">
+            <option value="Marital Status" selected>Marital Status</option>
+            <option value="Single" >Single</option>
+            <option value="Married" >Married</option>
+            <option value="Divorced" >Divorced</option>
+            <option value="Widowed" >Widowed</option>
+          </select>
+        </div>`,
+    step8: `<label for="Date of Birth">Date of Birth</label><input
+          id="dateofbirth"
+          class="formInput"
+          type="date"
+        />`,
+    step9: `<label for="Password">Password</label><div class="passinput">
+          <input
+            id="password"
+            class="formInput"
+            type="password"
+            placeholder="Password"
+          />
+          <img
+            src="media/SVGs/passwordEye.svg"
+            alt="Password show/hide"
+            onclick="passwordShowHide();"
+          />
+        </div>`,
+  },
+  French: {
+    step1: `<label for="Full Name">Nom complet</label><input
+          id="fullname"
+          class="formInput"
+          type="text"
+          placeholder="Nom complet"
+        />`,
+    step2: `<label for="Email Address">Adresse e-mail</label><input
+          id="email"
+          class="formInput"
+          type="email"
+          placeholder="Adresse e-mail"
+        />`,
+    step3: `<label for="Phone Number">Numéro de téléphone</label><input
+          id="phonenumber"
+          class="formInput"
+          type="text"
+          placeholder="Numéro de téléphone"
+        />`,
+    step4: `<label for="Gender">Genre</label><div class="selectContainer">
+          <select name="gender" id="gender">
+            <option value="Gender" selected>Genre</option>
+            <option value="Male">Homme</option>
+            <option value="Female">Femme</option>
+            <option value="Don't Specify">Ne pas spécifier</option>
+          </select>
+        </div>`,
+    step5: `<label for="Country of Citizenship">Pays de nationalité</label><div class="selectContainer">
+          <select name="Country of Citizenship" id="Country of Citizenship">
+            <option value="Country of Citizenship" selected>Pays de nationalité</option>
+          </select>
+        </div>`,
+    step6: `<label for="Country of Residence">Pays de résidence</label><div class="selectContainer">
+          <select name="Country of Residence" id="Country of Residence">
+            <option value="Country of Residence" selected>Pays de résidence</option>
+          </select>
+        </div>`,
+    step7: `<label for="Marital Status">État civil</label><div class="selectContainer">
+          <select name="Marital Status" id="Marital Status">
+            <option value="Marital Status" selected>État civil</option>
+            <option value="Single">Célibataire</option>
+            <option value="Married">Marié</option>
+            <option value="Divorced">Divorcé</option>
+            <option value="Widowed">Veuf</option>
+          </select>
+        </div>`,
+    step8: `<label for="Date of Birth">Date de naissance</label><input
+          id="dateofbirth"
+          class="formInput"
+          type="date"
+        />`,
+    step9: `<label for="Password">Mot de passe</label><div class="passinput">
+          <input
+            id="password"
+            class="formInput"
+            type="password"
+            placeholder="Mot de passe"
+          />
+          <img
+            src="media/SVGs/passwordEye.svg"
+            alt="Afficher/masquer le mot de passe"
+            onclick="passwordShowHide();"
+          />
+        </div>`,
+  },
+  Arabic: {
+    step1: `<label for="Full Name">الاسم الكامل</label><input
+          id="fullname"
+          class="formInput"
+          type="text"
+          placeholder="الاسم الكامل"
+        />`,
+    step2: `<label for="Email Address">عنوان البريد الإلكتروني</label><input
+          id="email"
+          class="formInput"
+          type="email"
+          placeholder="عنوان البريد الإلكتروني"
+        />`,
+    step3: `<label for="Phone Number">رقم الهاتف</label><input
+          id="phonenumber"
+          class="formInput"
+          type="text"
+          placeholder="رقم الهاتف"
+        />`,
+    step4: `<label for="Gender">الجنس</label><div class="selectContainer">
+          <select name="gender" id="gender">
+            <option value="Gender" selected>الجنس</option>
+            <option value="Male">ذكر</option>
+            <option value="Female">أنثى</option>
+            <option value="Don't Specify">لا تذكر</option>
+          </select>
+        </div>`,
+    step5: `<label for="Country of Citizenship">بلد الجنسية</label><div class="selectContainer">
+          <select name="Country of Citizenship" id="Country of Citizenship">
+            <option value="Country of Citizenship" selected>بلد الجنسية</option>
+          </select>
+        </div>`,
+    step6: `<label for="Country of Residence">بلد الإقامة</label><div class="selectContainer">
+          <select name="Country of Residence" id="Country of Residence">
+            <option value="Country of Residence" selected>بلد الإقامة</option>
+          </select>
+        </div>`,
+    step7: `<label for="Marital Status">الحالة الاجتماعية</label><div class="selectContainer">
+          <select name="Marital Status" id="Marital Status">
+            <option value="Marital Status" selected>الحالة الاجتماعية</option>
+            <option value="Single">أعزب</option>
+            <option value="Married">متزوج</option>
+            <option value="Divorced">مطلق</option>
+            <option value="Widowed">أرمل</option>
+          </select>
+        </div>`,
+    step8: `<label for="Date of Birth">تاريخ الميلاد</label><input
+          id="dateofbirth"
+          class="formInput"
+          type="date"
+        />`,
+    step9: `<label for="Password">كلمة المرور</label><div class="passinput">
+          <input
+            id="password"
+            class="formInput"
+            type="password"
+            placeholder="كلمة المرور"
+          />
+          <img
+            src="media/SVGs/passwordEye.svg"
+            alt="إظهار/إخفاء كلمة المرور"
+            onclick="passwordShowHide();"
+          />
+        </div>`,
+  },
 };
 
 let formFeedbackDict = {
@@ -346,6 +478,15 @@ const TranslateWebsite = async (language) => {
     lang = "fr";
   } else if (language === "Arabic") {
     lang = "ar";
+  }
+
+  if (page === "Register") {
+    if (registerFormStep !== 1) {
+      localStorage.setItem("language", language);
+      pageLanguage = language;
+      goToPage(page);
+      return;
+    }
   }
 
   await fetch(`Translations/${lang}/${page}.html`)
@@ -640,7 +781,7 @@ const registerFormHandler = (e) => {
   switch (registerFormStep) {
     case 5:
       document.getElementById("registerationFormItem").innerHTML =
-        RegisterFormSteps[`step${registerFormStep}`];
+        RegisterFormSteps[pageLanguage][`step${registerFormStep}`];
 
       let selectElement5 = document.getElementById(ids[registerFormStep - 1]);
 
@@ -654,7 +795,7 @@ const registerFormHandler = (e) => {
 
     case 6:
       document.getElementById("registerationFormItem").innerHTML =
-        RegisterFormSteps[`step${registerFormStep}`];
+        RegisterFormSteps[pageLanguage][`step${registerFormStep}`];
 
       let selectElement6 = document.getElementById(ids[registerFormStep - 1]);
 
@@ -668,7 +809,7 @@ const registerFormHandler = (e) => {
 
     case 9:
       document.getElementById("registerationFormItem").innerHTML =
-        RegisterFormSteps[`step${registerFormStep}`];
+        RegisterFormSteps[pageLanguage][`step${registerFormStep}`];
 
       document.getElementById("formBtn").innerText = "Register";
       break;
@@ -679,7 +820,7 @@ const registerFormHandler = (e) => {
 
     default:
       document.getElementById("registerationFormItem").innerHTML =
-        RegisterFormSteps[`step${registerFormStep}`];
+        RegisterFormSteps[pageLanguage][`step${registerFormStep}`];
       break;
   }
 };

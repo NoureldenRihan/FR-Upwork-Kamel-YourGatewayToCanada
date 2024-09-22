@@ -25,7 +25,7 @@ main {
 .freeSection section,
 .paidSection section {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--main);
   width: 100%;
   border-radius: 20px;
@@ -79,6 +79,12 @@ main {
   background-color: var(--secondaryHover);
 }
 
+.YTvid {
+  margin-top: 0;
+  width: 38%;
+  height: 250px;
+}
+
 @media (max-width: 650px) {
   .immigrationGuideTitle h1 {
     font-size: 24px;
@@ -86,6 +92,12 @@ main {
 
   .sectionTitle {
     font-size: 20px;
+  }
+
+  .freeSection section,
+  .paidSection section {
+    justify-content: center;
+    flex-direction: column;
   }
 
   .freeSection section h1,
@@ -101,6 +113,12 @@ main {
   .paidSection section button {
     font-size: 14px;
   }
+
+  .YTvid {
+    margin-top: 10px;
+    width: 60%;
+    height: 130px;
+  }
 }
 
 @media (min-width: 650px) and (max-width: 850px) {
@@ -110,6 +128,12 @@ main {
 
   .sectionTitle {
     font-size: 25px;
+  }
+
+  .freeSection section,
+  .paidSection section {
+    justify-content: center;
+    flex-direction: column;
   }
 
   .freeSection section h1,
@@ -124,6 +148,12 @@ main {
 
   .paidSection section button {
     font-size: 17px;
+  }
+
+  .YTvid {
+    margin-top: 10px;
+    width: 50%;
+    height: 150px;
   }
 }
 
@@ -148,5 +178,11 @@ main {
 
   .paidSection section button {
     font-size: 20px;
+  }
+
+  .YTvid {
+    margin-top: 0;
+    width: 40%;
+    height: 170px;
   }
 }
