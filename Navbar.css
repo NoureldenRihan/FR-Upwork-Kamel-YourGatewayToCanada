@@ -186,10 +186,6 @@ nav {
   height: 100%;
 }
 
-.skiptranslate {
-  width: 0vw !important;
-}
-
 .comingSoon {
   background-color: var(--secondary);
   padding: 4px;

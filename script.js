@@ -314,76 +314,6 @@ window.onload = async () => {
   }
 };
 
-const convertWebsiteLanguage = (language) => {
-  const iframe = document.getElementsByClassName(
-    "VIpgJd-ZVi9od-xl07Ob-OEVmcd"
-  )[0];
-
-  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-  if (iframeDoc) {
-    const iframeContents = iframeDoc.querySelectorAll(
-      "a.VIpgJd-ZVi9od-vH1Gmf-ibnC6b"
-    );
-
-    let num = 0;
-
-    if (currentLanguage === language) {
-      return;
-    }
-
-    switch (currentLanguage) {
-      case "Arabic":
-        if (language === "English") {
-          num = 0;
-        } else if (language === "French") {
-          num = 1;
-        } else {
-          break;
-        }
-
-        iframeContents[num].click();
-        iframeContents[num].click();
-        currentLanguage = language;
-        break;
-      case "English":
-        if (language === "Arabic") {
-          num = 0;
-        } else if (language === "French") {
-          num = 1;
-        } else {
-          break;
-        }
-
-        iframeContents[num].click();
-        iframeContents[num].click();
-        currentLanguage = language;
-        break;
-      case "French":
-        if (language === "Arabic") {
-          num = 0;
-        } else if (language === "English") {
-          num = 1;
-        } else {
-          break;
-        }
-
-        iframeContents[num].click();
-        iframeContents[num].click();
-        currentLanguage = language;
-        break;
-
-      default:
-        console.log("Unknown language");
-        break;
-    }
-  }
-
-  setTimeout(() => {
-    successCalculatorTranslationFix();
-  }, 500);
-};
-
 const openSupportChat = () => {
   window.scrollTo(0, 0);
 
@@ -534,33 +464,6 @@ const successCalculator = (e) => {
 
   h1.innerText = formFeedback.FormSuccessMsg + ` ${percentage}%`;
   h1.classList.remove("err");
-};
-
-const successCalculatorTranslationFix = () => {
-  if (page === "successCalculator") {
-    ids = [
-      "oralComprehension",
-      "writtenComprehension",
-      "oralExpression",
-      "writtenExpression",
-    ];
-
-    for (let i = 0; i < ids.length; i++) {
-      const element = document.getElementById(ids[i]);
-      element.options[0].value = "A1";
-      element.options[0].innerText = "A1";
-      element.options[1].value = "A2";
-      element.options[1].innerText = "A2";
-      element.options[2].value = "B1";
-      element.options[2].innerText = "B1";
-      element.options[3].value = "B2";
-      element.options[3].innerText = "B2";
-      element.options[4].value = "C1";
-      element.options[4].innerText = "C1";
-      element.options[5].value = "C2";
-      element.options[5].innerText = "C2";
-    }
-  }
 };
 
 const passwordShowHide = () => {
@@ -739,15 +642,3 @@ const navBarInit = async () => {
     }
   });
 };
-
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: "en",
-      includedLanguages: "en,fr,ar",
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: false,
-    },
-    "google_translate_element"
-  );
-}

@@ -75,15 +75,26 @@ ul {
   background-color: var(--secondaryHover);
 }
 
-.home {
+.btns {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  margin: auto;
+  width: 100%;
+  gap: 40px;
 }
 
-.home .btn {
+.btns .btn {
+  margin-bottom: 40px;
+}
+
+.airport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.airport .btn {
   margin-bottom: 40px;
 }
 
@@ -110,14 +121,6 @@ ul {
     padding: 6px 10px;
     margin: 10px 0;
   }
-
-  .home {
-    width: 50%;
-  }
-
-  .btn {
-    font-size: 15px;
-  }
 }
 
 @media (min-width: 650px) and (max-width: 1000px) {
@@ -136,13 +139,5 @@ ul {
   .btn {
     font-size: 18px;
     padding: 8px 12px;
-  }
-
-  .home {
-    width: 50%;
-  }
-
-  .btn {
-    font-size: 16px;
   }
 }
