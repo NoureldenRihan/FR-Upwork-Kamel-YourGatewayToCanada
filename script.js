@@ -577,30 +577,31 @@ const successCalculator = (e) => {
   }
 
   let percentage = 0;
+  let notAcceptedLangaugeValues = [
+    "NCLC1",
+    "NCLC2",
+    "NCLC3",
+    "NCLC4",
+    "NCLC5",
+    "NCLC6",
+    "NCLC7",
+  ];
 
   // Language Weighing
   if (
-    formAnswers.oralComprehension === "B1" ||
-    formAnswers.oralComprehension === "A2" ||
-    formAnswers.oralComprehension === "A1" ||
-    formAnswers.writtenComprehension === "B1" ||
-    formAnswers.writtenComprehension === "A2" ||
-    formAnswers.writtenComprehension === "A1" ||
-    formAnswers.oralExpression === "B1" ||
-    formAnswers.oralExpression === "A2" ||
-    formAnswers.oralExpression === "A1" ||
-    formAnswers.writtenExpression === "B1" ||
-    formAnswers.writtenExpression === "A2" ||
-    formAnswers.writtenExpression === "A1"
+    notAcceptedLangaugeValues.includes(formAnswers.oralComprehension) ||
+    notAcceptedLangaugeValues.includes(formAnswers.writtenComprehension) ||
+    notAcceptedLangaugeValues.includes(formAnswers.oralExpression) ||
+    notAcceptedLangaugeValues.includes(formAnswers.writtenExpression)
   ) {
     h1.innerText = formFeedback.FormIneligibleMsg;
     h1.classList.add("err");
     return;
   } else {
     const languageScores = {
-      C2: 40,
-      C1: 35,
-      B2: 30,
+      NCLC10: 40,
+      NCLC9: 35,
+      NCLC8: 30,
     };
 
     const lowestLanguageScore = Math.min(

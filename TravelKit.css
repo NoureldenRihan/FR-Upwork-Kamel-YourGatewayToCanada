@@ -3,7 +3,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--main);
   width: 80%;
   margin: auto;
   border-radius: 40px;
@@ -18,24 +17,28 @@ main h1 {
   margin-bottom: 10px;
 }
 
-ul {
-  font-weight: bold;
-  color: var(--primary);
-  font-size: 20px;
-}
-
 .travelKitItem {
-  margin-bottom: 10px;
+  background-color: var(--main);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
 }
 
-.travelKitItem p {
+.travelKitItem:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.travelKitItem li {
   font-weight: normal;
   color: var(--white);
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.travelKitItem p span {
+.travelKitItem span {
   font-weight: bold;
+  font-size: 22px;
   color: var(--primary);
 }
 
@@ -44,7 +47,7 @@ ul {
   color: var(--white);
   font-weight: bold;
   border: 0;
-  margin: 25px 0;
+  margin: 10px 0;
   outline: 0;
   background-color: var(--secondary);
   width: fit-content;
@@ -72,20 +75,16 @@ ul {
   width: 100%;
 }
 
-.arrival .btn {
-  margin-bottom: 40px;
-}
-
 @media (max-width: 650px) {
   main h1 {
     font-size: 20px;
   }
 
-  ul {
+  .travelKitItem span {
     font-size: 15px;
   }
 
-  .travelKitItem p {
+  .travelKitItem li {
     font-size: 13px;
   }
 
