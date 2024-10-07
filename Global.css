@@ -7,6 +7,7 @@
   --black: #000000;
   --white: #ffffff;
   --gray: #d9d9d9;
+  --darkGray: #8d8d8d;
   --bodyBackground: #d5d5d5;
 }
 
@@ -227,6 +228,85 @@ nav {
 }
 
 /* End Navbar */
+/* Start Timeline */
+
+.timeline {
+  display: flex;
+  margin: 15px 0 10px 0;
+  width: 80vw;
+  justify-content: space-evenly;
+}
+
+.timeline-item {
+  position: relative;
+  width: 20vw;
+  text-align: center;
+}
+
+.timeline-item:hover {
+  cursor: pointer;
+}
+
+.timeline-item:hover .timeline-circle {
+  border: 3px solid var(--black);
+}
+
+.timeline-circle {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-circle::after {
+  content: "";
+  position: absolute;
+  left: 27.5px;
+  width: 20vw;
+  height: 5px;
+  background-color: var(--line-color, white);
+}
+
+.arabicTimeline .timeline-circle::after {
+  right: 27.5px;
+}
+
+.timeline-item:last-child .timeline-circle::after {
+  width: 0;
+  height: 0;
+}
+
+.timeline-circle.completed {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.timeline-circle.in-progress {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.timeline-circle.inactive {
+  background-color: var(--darkGray);
+  border-color: var(--darkGray);
+}
+
+.timeline-content {
+  padding: 10px;
+  color: var(--white);
+  font-weight: normal;
+  font-size: 15px;
+}
+
+/* End Timeline */
 
 @media (max-width: 650px) {
   nav {
@@ -280,6 +360,21 @@ nav {
   .comingSoon p {
     font-size: 3.5px;
   }
+
+  .timeline-content {
+    padding: 6px;
+    font-size: 8px;
+  }
+
+  .timeline-circle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .timeline-circle::after {
+    left: 18px;
+    height: 3px;
+  }
 }
 
 @media (min-width: 650px) and (max-width: 850px) {
@@ -326,6 +421,21 @@ nav {
 
   .comingSoon p {
     font-size: 6px;
+  }
+
+  .timeline-content {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .timeline-circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .timeline-circle::after {
+    left: 23px;
+    height: 5px;
   }
 }
 
@@ -377,5 +487,20 @@ nav {
 
   .comingSoon p {
     font-size: 9px;
+  }
+
+  .timeline-content {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .timeline-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .timeline-circle::after {
+    left: 27.5px;
+    height: 5px;
   }
 }

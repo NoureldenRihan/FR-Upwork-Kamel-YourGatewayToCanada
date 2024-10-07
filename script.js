@@ -243,6 +243,12 @@ let formFeedbackDict = {
   },
 };
 
+let statusDict = {
+  English: ["To Do", "In Progress", "Completed"],
+  French: ["À faire", "En cours", "Terminé"],
+  Arabic: ["يجب فعله", "قيد التقدم", "مكتمل"],
+};
+
 const countries = [
   "Afghanistan",
   "Albania",
@@ -462,7 +468,9 @@ window.onload = async () => {
     return;
   }
 
-  await navBarInit();
+  await navBarInit("English");
+
+  await timelineInit("English", page);
 
   eventListenerHandler();
 };
@@ -496,6 +504,7 @@ const TranslateWebsite = async (language) => {
     });
 
   await navBarInit(language);
+  await timelineInit(language);
 
   eventListenerHandler();
 
@@ -859,4 +868,55 @@ const navBarInit = async (language) => {
       }
     }
   });
+};
+
+const timelineInit = async (language) => {
+  let query = "TimelineSnippet.html";
+  if (language === "French") {
+    query = "Translations/fr/TimelineSnippet.html";
+  } else if (language === "Arabic") {
+    query = "Translations/ar/TimelineSnippet.html";
+  }
+
+  let circles = document.getElementsByClassName("timeline-circle");
+  let statuses = document.getElementsByClassName("status");
+
+  switch (page) {
+    case "TravelKit":
+      await timelineSnippetFetcher(query);
+      circles[0].classList.remove("inactive");
+      circles[0].classList.add("in-progress");
+      statuses[0].innerText = statusDict[language][1];
+      break;
+    case "ArrivalKitYUL":
+      break;
+    case "ArrivalKit":
+      await timelineSnippetFetcher(query);
+      circles[0].classList.remove("inactive");
+      circles[0].classList.add("completed");
+      circles[0].style.setProperty("--line-color", "#4789fd");
+      statuses[0].innerText = statusDict[language][2];
+
+      circles[1].classList.remove("inactive");
+      circles[1].classList.add("completed");
+      circles[1].style.setProperty("--line-color", "#4789fd");
+      statuses[1].innerText = statusDict[language][2];
+
+      circles[2].classList.remove("inactive");
+      circles[2].classList.add("in-progress");
+      statuses[2].innerText = statusDict[language][1];
+      break;
+    case "ArrivalKitQuebec":
+      break;
+    default:
+      break;
+  }
+};
+
+const timelineSnippetFetcher = async (query) => {
+  await fetch(query)
+    .then((response) => response.text())
+    .then((htmlContent) => {
+      document.getElementById("timeline").innerHTML = htmlContent;
+    });
 };
