@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Your Gateway to Canada</title>
+    <link rel="stylesheet" href="Global.css" />
+    <link rel="stylesheet" href="Contact.css" />
+  </head>
+
+  <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" data-name="Contact" hidden></span>
+    <nav id="navbar"></nav>
+    <!-- Begin Contact Section -->
+
+    <div class="result">
+      <h1 id="result"></h1>
+    </div>
+
+    <main>
+      <h1 id="contactTitle">Contact Us</h1>
+      <h2 class="description">Get in Touch with us!</h2>
+      <h2 class="description">We're Here to assist you!</h2>
+      <br />
+      <h1 class="socialsTitle">Our Social Accounts</h1>
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/profile.php?id=61564918100375&locale=fr_CA"
+        >
+          <button>
+            <img src="/media/SVGs/facebook.svg" />
+            <p>Facebook Page</p>
+          </button>
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61550872630734&locale=fr_CA"
+        >
+          <button>
+            <img src="/media/SVGs/facebook.svg" />
+            <p>Kamel Yahia Bey</p>
+          </button>
+        </a>
+      </div>
+      <br />
+
+      <section class="loginForm">
+        <h1 class="contactFromTitle">Our Contact Form</h1>
+        <form
+          id="contactform"
+          action="https://formsubmit.co/noureldenrihan@gmail.com"
+          method="POST"
+        >
+          <div class="formItem">
+            <label for="fullname">Full Name</label>
+            <input
+              name="FullName"
+              class="formInput"
+              type="text"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="formItem">
+            <label for="email">Email Address</label>
+            <input
+              name="Email"
+              class="formInput"
+              type="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="formItem">
+            <label for="message">Message</label>
+            <input
+              name="Message"
+              class="formInput"
+              type="text"
+              placeholder="Message"
+              required
+            />
+          </div>
+          <input
+            type="hidden"
+            name="_subject"
+            value="Email to Your Gateway to Canada!"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://yourgatewaytocanada.pro/Contact.html"
+          />
+          <button id="formBtn">Send</button>
+        </form>
+      </section>
+    </main>
+    <!-- End Contact Section -->
+    <script src="script.js"></script>
+  </body>
+</html>
