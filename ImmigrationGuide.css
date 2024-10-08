@@ -74,10 +74,21 @@ main {
 }
 
 .timeline-content {
-  padding: 10px;
   color: var(--white);
   font-weight: normal;
   font-size: 15px;
+}
+
+.timeline-content p {
+  background-color: var(--secondary);
+  border-radius: 9999px;
+  width: fit-content;
+  margin: auto;
+  padding: 6px;
+}
+
+.timeline-content:hover > p {
+  background-color: var(--secondaryHover);
 }
 
 .immigrationGuideTitle h1 {
@@ -206,6 +217,10 @@ main {
     left: 18px;
     height: 3px;
   }
+
+  .timeline-content p {
+    padding: 3px;
+  }
 }
 
 @media (min-width: 650px) and (max-width: 850px) {
@@ -257,6 +272,10 @@ main {
     left: 23px;
     height: 5px;
   }
+
+  .timeline-content p {
+    padding: 5px;
+  }
 }
 
 @media (min-width: 850px) and (max-width: 1000px) {
@@ -301,5 +320,9 @@ main {
   .timeline-circle::after {
     left: 27.5px;
     height: 5px;
+  }
+
+  .timeline-content p {
+    padding: 6px;
   }
 }
