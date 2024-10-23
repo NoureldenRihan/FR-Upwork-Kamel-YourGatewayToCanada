@@ -4,6 +4,7 @@ main {
   justify-content: space-between;
   align-items: stretch;
   position: relative;
+  margin-bottom: 60px;
 }
 
 .landing {
@@ -45,6 +46,11 @@ main {
   align-items: center;
   cursor: pointer;
   position: relative;
+  margin-top: 20px;
+}
+
+.service a {
+  height: 100%;
 }
 
 .service:hover {

@@ -17,7 +17,7 @@ main h1 {
   margin-bottom: 10px;
 }
 
-.travelKitItem {
+.accommodationItem {
   background-color: var(--main);
   border-radius: 20px;
   padding: 20px;
@@ -25,18 +25,18 @@ main h1 {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
 }
 
-.travelKitItem:hover {
+.accommodationItem:hover {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
-.travelKitItem li {
+.accommodationItem li {
   font-weight: normal;
   color: var(--white);
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.travelKitItem span {
+.accommodationItem span {
   font-weight: bold;
   font-size: 22px;
   color: var(--primary);
@@ -76,23 +76,16 @@ main h1 {
   background-color: var(--secondaryHover);
 }
 
-.arrival {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 @media (max-width: 650px) {
   main h1 {
     font-size: 20px;
   }
 
-  .travelKitItem span {
+  .accommodationItem span {
     font-size: 15px;
   }
 
-  .travelKitItem li {
+  .accommodationItem li {
     font-size: 13px;
   }
 

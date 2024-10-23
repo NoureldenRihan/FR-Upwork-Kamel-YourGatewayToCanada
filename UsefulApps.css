@@ -17,7 +17,7 @@ main h1 {
   margin-bottom: 10px;
 }
 
-.travelKitItem {
+.usefulAppsItem {
   background-color: var(--main);
   border-radius: 20px;
   padding: 20px;
@@ -25,18 +25,18 @@ main h1 {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
 }
 
-.travelKitItem:hover {
+.usefulAppsItem:hover {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
-.travelKitItem li {
+.usefulAppsItem li {
   font-weight: normal;
   color: var(--white);
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.travelKitItem span {
+.usefulAppsItem span {
   font-weight: bold;
   font-size: 22px;
   color: var(--primary);
@@ -55,7 +55,7 @@ main h1 {
   color: var(--white);
   font-weight: bold;
   border: 0;
-  margin: 10px 0 40px 0;
+  margin: 10px 0 10px 0;
   outline: 0;
   background-color: var(--secondary);
   width: fit-content;
@@ -88,11 +88,11 @@ main h1 {
     font-size: 20px;
   }
 
-  .travelKitItem span {
+  .usefulAppsItem span {
     font-size: 15px;
   }
 
-  .travelKitItem li {
+  .usefulAppsItem li {
     font-size: 13px;
   }
 

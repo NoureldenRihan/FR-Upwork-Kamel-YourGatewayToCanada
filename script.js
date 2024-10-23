@@ -888,7 +888,16 @@ const timelineInit = async (language) => {
       circles[0].classList.add("in-progress");
       statuses[0].innerText = statusDict[language][1];
       break;
-    case "ArrivalKitYUL":
+    case "ArrivalYUL":
+      await timelineSnippetFetcher(query);
+      circles[0].classList.remove("inactive");
+      circles[0].classList.add("completed");
+      circles[0].style.setProperty("--line-color", "#4789fd");
+      statuses[0].innerText = statusDict[language][2];
+
+      circles[1].classList.remove("inactive");
+      circles[1].classList.add("in-progress");
+      statuses[1].innerText = statusDict[language][1];
       break;
     case "ArrivalKit":
       await timelineSnippetFetcher(query);
@@ -906,7 +915,33 @@ const timelineInit = async (language) => {
       circles[2].classList.add("in-progress");
       statuses[2].innerText = statusDict[language][1];
       break;
-    case "ArrivalKitQuebec":
+    case "ArrivalQuebec":
+      break;
+    case "UsefulApps":
+      await timelineSnippetFetcher(query);
+      circles[0].classList.remove("inactive");
+      circles[0].classList.add("completed");
+      circles[0].style.setProperty("--line-color", "#4789fd");
+      statuses[0].innerText = statusDict[language][2];
+
+      circles[1].classList.remove("inactive");
+      circles[1].classList.add("completed");
+      circles[1].style.setProperty("--line-color", "#4789fd");
+      statuses[1].innerText = statusDict[language][2];
+
+      circles[2].classList.remove("inactive");
+      circles[2].classList.add("completed");
+      circles[2].style.setProperty("--line-color", "#4789fd");
+      statuses[2].innerText = statusDict[language][2];
+
+      circles[3].classList.remove("inactive");
+      circles[3].classList.add("completed");
+      circles[3].style.setProperty("--line-color", "#4789fd");
+      statuses[3].innerText = statusDict[language][2];
+
+      circles[4].classList.remove("inactive");
+      circles[4].classList.add("in-progress");
+      statuses[4].innerText = statusDict[language][1];
       break;
     default:
       break;
