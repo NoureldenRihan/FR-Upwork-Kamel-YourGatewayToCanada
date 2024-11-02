@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Your Gateway to Canada</title>
+    <link rel="stylesheet" href="Global.css" />
+    <link rel="stylesheet" href="Aboutus.css" />
+  </head>
+
+  <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" data-name="Aboutus" hidden></span>
+    <nav id="navbar"></nav>
+    <!-- Begin Aboutus Section -->
+    <main>
+      <div class="aboutusOptions">
+        <h1
+          onclick="aboutusTopicChange(1);"
+          id="option1"
+          class="aboutusOption active"
+        >
+          Our Vision
+        </h1>
+        <h1 onclick="aboutusTopicChange(2);" id="option2" class="aboutusOption">
+          Our Core Values
+        </h1>
+        <h1 onclick="aboutusTopicChange(3);" id="option3" class="aboutusOption">
+          Our Network
+        </h1>
+      </div>
+      <section id="AboutusContainer">
+        <article id="aboutusTopic1" class="aboutusTopic">
+          <h1>Our Vision</h1>
+          <p>
+            To empower individuals and families to achieve their Canadian
+            immigration dreams by providing comprehensive, accurate, and
+            up-to-date information and guidance. We strive to simplify the
+            complex immigration process, making it accessible to all. By
+            offering personalized support and expert advice, we aim to help our
+            clients navigate the challenges and seize opportunities in Canada.
+          </p>
+        </article>
+        <article id="aboutusTopic2" class="aboutusTopic">
+          <h1>Our Core Values</h1>
+          <p>
+            <b>Client-Centric:</b> We prioritize our clients' needs and strive
+            to deliver exceptional service. <br />
+            <b>Innovation:</b> We embrace technological advancements to enhance
+            our services and stay ahead of industry trends. <br />
+            <b>Compassion:</b> We understand the emotional and financial
+            implications of immigration and provide empathetic support
+            throughout the journey.
+          </p>
+        </article>
+        <article id="aboutusTopic3" class="aboutusTopic">
+          <h1>Our Network</h1>
+          <p>
+            We are proud to be part of a global network of immigration
+            professionals, allowing us to collaborate and share expertise to
+            better serve our clients. Our network includes a supportive
+            community of clients who share their experiences and insights.
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- End Aboutus Section -->
+    <script src="script.js"></script>
+  </body>
+</html>

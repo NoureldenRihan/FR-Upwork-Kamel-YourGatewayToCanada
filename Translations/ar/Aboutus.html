@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>معلومات عنا - بوابتك إلى كندا</title>
+    <link rel="stylesheet" href="Global.css" />
+    <link rel="stylesheet" href="Aboutus.css" />
+  </head>
+
+  <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" data-name="Aboutus" hidden></span>
+    <nav id="navbar"></nav>
+    <!-- Begin Aboutus Section -->
+    <main>
+      <div class="aboutusOptions">
+        <h1
+          onclick="aboutusTopicChange(1);"
+          id="option1"
+          class="aboutusOption active"
+        >
+          رؤيتنا
+        </h1>
+        <h1 onclick="aboutusTopicChange(2);" id="option2" class="aboutusOption">
+          قيمنا الأساسية
+        </h1>
+        <h1 onclick="aboutusTopicChange(3);" id="option3" class="aboutusOption">
+          شبكة الاتصال الخاصة بنا
+        </h1>
+      </div>
+      <section id="AboutusContainer">
+        <article id="aboutusTopic1" class="aboutusTopic">
+          <h1>رؤيتنا</h1>
+          <p>
+            لتمكين الأفراد والعائلات من تحقيق الجنسية الكندية أحلام الهجرة من
+            خلال توفير شامل ودقيق أحدث المعلومات والإرشادات. نحن نسعى جاهدين
+            لتبسيط عملية الهجرة المعقدة، مما يجعلها في متناول الجميع. بواسطة من
+            خلال تقديم الدعم الشخصي ومشورة الخبراء، نهدف إلى مساعدة عملائنا على
+            التغلب على التحديات واغتنام الفرص في كندا.
+          </p>
+        </article>
+        <article id="aboutusTopic2" class="aboutusTopic">
+          <h1>قيمنا الأساسية</h1>
+          <p>
+            <b>التركيز على العميل: </b> نعطي الأولوية لاحتياجات عملائنا ونسعى
+            جاهدين لتقديم خدمة استثنائية. <br />
+            <b>الابتكار: </b> نحن نتبنى التطورات التكنولوجية لتعزيز خدماتنا
+            والبقاء في صدارة اتجاهات الصناعة. <br />
+            <b>التعاطف: </b> نحن نفهم العاطفي والمالي الآثار المترتبة على الهجرة
+            وتقديم الدعم التعاطفي طوال الرحلة.
+          </p>
+        </article>
+        <article id="aboutusTopic3" class="aboutusTopic">
+          <h1>شبكتنا</h1>
+          <p>
+            نحن فخورون بأن نكون جزءًا من شبكة عالمية للهجرة المهنيين، مما يسمح
+            لنا بالتعاون وتبادل الخبرات مع خدمة عملائنا بشكل أفضل. تتضمن شبكتنا
+            أداة داعمة مجتمع العملاء الذين يشاركون تجاربهم ورؤاهم.
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- End Aboutus Section -->
+    <script src="script.js"></script>
+  </body>
+</html>

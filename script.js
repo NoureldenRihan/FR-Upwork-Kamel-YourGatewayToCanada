@@ -955,3 +955,62 @@ const timelineSnippetFetcher = async (query) => {
       document.getElementById("timeline").innerHTML = htmlContent;
     });
 };
+
+const aboutusTopicChange = (topicNum) => {
+  let topic1 = document.getElementById("aboutusTopic1");
+  let option1 = document.getElementById("option1");
+
+  let topic2 = document.getElementById("aboutusTopic2");
+  let option2 = document.getElementById("option2");
+
+  let topic3 = document.getElementById("aboutusTopic3");
+  let option3 = document.getElementById("option3");
+
+  if (![1, 2, 3].includes(topicNum)) {
+    return;
+  }
+
+  let active = 0;
+
+  if (option1.classList.contains("active")) {
+    active = 1;
+  } else if (option2.classList.contains("active")) {
+    active = 2;
+  } else if (option3.classList.contains("active")) {
+    active = 3;
+  }
+
+  if (active == topicNum) {
+    return;
+  }
+
+  if (option1.classList.contains("active")) {
+    option1.classList.remove("active");
+    topic1.style.display = "none";
+  }
+
+  if (topicNum === 1) {
+    option1.classList.add("active");
+    topic1.style.display = "block";
+  }
+
+  if (option2.classList.contains("active")) {
+    option2.classList.remove("active");
+    topic2.style.display = "none";
+  }
+
+  if (topicNum === 2) {
+    option2.classList.add("active");
+    topic2.style.display = "block";
+  }
+
+  if (option3.classList.contains("active")) {
+    option3.classList.remove("active");
+    topic3.style.display = "none";
+  }
+
+  if (topicNum === 3) {
+    option3.classList.add("active");
+    topic3.style.display = "block";
+  }
+};

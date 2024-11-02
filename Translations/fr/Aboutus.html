@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos de nous - Votre porte d'entrée au Canada</title>
+    <link rel="stylesheet" href="Global.css" />
+    <link rel="stylesheet" href="Aboutus.css" />
+  </head>
+
+  <body>
+    <!-- Used to identify page when translating -->
+    <span id="pageName" data-name="Aboutus" hidden></span>
+    <nav id="navbar"></nav>
+    <!-- Begin Aboutus Section -->
+    <main>
+      <div class="aboutusOptions">
+        <h1
+          onclick="aboutusTopicChange(1);"
+          id="option1"
+          class="aboutusOption active"
+        >
+          Notre vision
+        </h1>
+        <h1 onclick="aboutusTopicChange(2);" id="option2" class="aboutusOption">
+          Nos valeurs fondamentales
+        </h1>
+        <h1 onclick="aboutusTopicChange(3);" id="option3" class="aboutusOption">
+          Notre réseau
+        </h1>
+      </div>
+      <section id="AboutusContainer">
+        <article id="aboutusTopic1" class="aboutusTopic">
+          <h1>Notre vision</h1>
+          <p>
+            Donner aux personnes et aux familles les moyens de réussir leur vie
+            rêves d'immigration en fournissant des informations complètes,
+            précises et des informations et des conseils à jour. Nous nous
+            efforçons de simplifier processus d'immigration complexe, le rendant
+            accessible à tous. Par en offrant un soutien personnalisé et des
+            conseils d'experts, nous visons à aider nos clients à relever les
+            défis et à saisir les opportunités au Canada.
+          </p>
+        </article>
+        <article id="aboutusTopic2" class="aboutusTopic">
+          <h1>Nos valeurs fondamentales</h1>
+          <p>
+            <b>Centré sur le client: </b> nous donnons la priorité aux besoins
+            de nos clients et nous nous efforçons pour fournir un service
+            exceptionnel. <br />
+            <b>Innovation: </b> nous misons sur les avancées technologiques pour
+            améliorer nos services et rester à l'affût des tendances du secteur.
+            <br />
+            <b>Compassion: </b> nous comprenons les aspects émotionnels et
+            financiers implications de l'immigration et fournir un soutien
+            empathique tout au long du voyage.
+          </p>
+        </article>
+        <article id="aboutusTopic3" class="aboutusTopic">
+          <h1>Notre réseau</h1>
+          <p>
+            Nous sommes fiers de faire partie d'un réseau mondial d'immigration
+            professionnels, ce qui nous permet de collaborer et de partager
+            notre expertise pour mieux servir nos clients. Notre réseau comprend
+            un communauté de clients qui partagent leurs expériences et leurs
+            idées.
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- End Aboutus Section -->
+    <script src="script.js"></script>
+  </body>
+</html>
